@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:uikit/uikit.dart';
 
-class BannerError extends StatelessWidget {
+class BannerDefault extends StatelessWidget {
   final String image;
-  final String text;
-  const BannerError({
+  final String? text;
+  const BannerDefault({
     super.key,
     required this.image,
-    required this.text,
+    this.text,
   });
 
   @override
@@ -27,9 +27,10 @@ class BannerError extends StatelessWidget {
               width: 300,
               height: 300,
             ),
-            TextLabelL2Dark(
-              text: text,
-            ),
+            if (text != null)
+              TextLabelL2Dark(
+                text: text.toString(),
+              ),
           ],
         ),
       ),

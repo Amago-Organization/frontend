@@ -20,7 +20,7 @@ class ListAllPostsWidget extends StatelessWidget {
           return const Center(child: CircularProgressIndicator());
         }
         if (postController.isServerError) {
-          return BannerError(
+          return BannerDefault(
             image: ImageConstant.serverError,
             text: TextConstant.serverError,
           );
@@ -29,7 +29,7 @@ class ListAllPostsWidget extends StatelessWidget {
         final posts = postController.postList;
 
         if (posts == null || posts.isEmpty) {
-          return BannerError(
+          return BannerDefault(
             image: ImageConstant.empty,
             text: TextConstant.postEmpty,
           );

@@ -12,17 +12,17 @@ class LocalStorageServiceImpl implements LocalStorageService {
 
 
   @override
-  Future delete(String key) async {
+  Future<void> delete(String key) async {
     return await storage.delete(key: key);
   }
 
   @override
-  Future get(String key) async {
+  Future<String?> get(String key) async {
     return await storage.read(key: key);
   }
 
   @override
-  Future put(String key, UserTokenDto value) async {
+  Future<void> put(String key, UserTokenDto value) async {
     return await storage.write(key: key, value: value.toJson());
   }
 }

@@ -36,7 +36,7 @@ class _MyListPostsWidgetState extends State<MyListPostsWidget> {
           return const Center(child: CircularProgressIndicator());
         }
         if (postController.isServerError) {
-          return BannerError(
+          return BannerDefault(
             image: ImageConstant.serverError,
             text: TextConstant.serverError,
           );
@@ -45,7 +45,7 @@ class _MyListPostsWidgetState extends State<MyListPostsWidget> {
         final posts = postController.postListByFileType;
 
         if (posts == null || posts.isEmpty) {
-          return BannerError(
+          return BannerDefault(
             image: ImageConstant.empty,
             text: TextConstant.postEmpty,
           );

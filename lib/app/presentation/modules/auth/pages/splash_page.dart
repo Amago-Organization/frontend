@@ -50,7 +50,7 @@ class _SplashPageState extends State<SplashPage> {
                 child: Builder(
                   builder: (context) {
                     if (userController.isServerError) {
-                      return BannerError(
+                      return BannerDefault(
                         image: ImageConstant.serverError,
                         text: TextConstant.serverError,
                       );

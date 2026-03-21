@@ -1,6 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Banner;
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:go_router/go_router.dart';
@@ -70,7 +70,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   IconButtonLargeDark(
-                                    onTap: () async{
+                                    onTap: () async {
                                       context.go('/feed');
                                       await postController.list();
                                     },
@@ -97,13 +97,13 @@ class _MyProfilePageState extends State<MyProfilePage> {
                                 );
                               }
                               if (userController.isServerError) {
-                                return BannerError(
+                                return BannerDefault(
                                   image: ImageConstant.serverError,
                                   text: TextConstant.serverError,
                                 );
                               }
                               if (userController.user == null) {
-                                return BannerError(
+                                return BannerDefault(
                                   image: ImageConstant.empty,
                                   text: TextConstant.postEmpty,
                                 );
