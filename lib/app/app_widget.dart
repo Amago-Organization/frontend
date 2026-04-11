@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:pulse_post/app/app_bindings.dart';
 import 'package:pulse_post/app/app_routes.dart';
-import 'package:pulse_post/app/presentation/modules/auth/auth_module.dart';
+import 'package:pulse_post/app/features/presentation/modules/auth/auth_module.dart';
 import 'package:uikit/uikit.dart';
 
 class AppWidget extends StatelessWidget {
