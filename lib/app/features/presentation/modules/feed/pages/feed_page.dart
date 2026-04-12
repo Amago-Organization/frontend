@@ -11,8 +11,7 @@ import 'package:amago/app/core/utils/constants/icons/icon_constant.dart';
 import 'package:amago/app/core/utils/constants/images/image_constant.dart';
 import 'package:amago/app/core/utils/constants/texts/text_constant.dart';
 import 'package:uikit/uikit.dart';
-// ignore: depend_on_referenced_packages
-import 'package:flutter_svg/flutter_svg.dart';
+
 
 class FeedPage extends StatefulWidget {
   const FeedPage({super.key});
@@ -53,9 +52,9 @@ class _FeedPageState extends State<FeedPage> {
             0,
           ),
           child: AppBar(
-            title: SvgPicture.asset(
+            title: Image.asset(
               ImageConstant.logoHorizontal,
-              height: SizeToken.xxl,
+              height: SizeToken.xl3,
             ),
             actions: [
               IconButtonLargeDark(
