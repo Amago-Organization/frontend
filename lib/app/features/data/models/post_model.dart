@@ -1,5 +1,5 @@
-import 'package:pulse_post/app/features/data/models/user_summary_model.dart';
-import 'package:pulse_post/app/features/domain/entities/post_entity.dart';
+import 'package:amago/app/features/data/models/user_summary_model.dart';
+import 'package:amago/app/features/domain/entities/post_entity.dart';
 
 class PostModel extends PostEntity {
   const PostModel({

@@ -1,58 +1,55 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:io';
 
 import 'package:mobx/mobx.dart';
-import 'package:pulse_post/app/features/domain/remocao/dtos/post/post_detail_dto.dart';
-import 'package:pulse_post/app/features/domain/remocao/dtos/post/post_register_dto.dart';
-import 'package:pulse_post/app/features/domain/remocao/dtos/post/post_update_dto.dart';
-
-import 'package:pulse_post/app/features/presentation/viewmodels/remocao/posts/post_view_model.dart';
+import 'package:amago/app/features/domain/entities/post_entity.dart';
+import 'package:amago/app/features/domain/params/posts/post_register_param.dart';
+import 'package:amago/app/features/domain/params/posts/post_update_param.dart';
+import 'package:amago/app/features/presentation/viewmodels/posts/post_viewmodel.dart';
 
 part 'post_controller.g.dart';
 
 class PostController = PostControllerBase with _$PostController;
 
 abstract class PostControllerBase with Store {
-  final PostViewModel postViewModel;
-  PostControllerBase({required this.postViewModel});
+  final PostViewmodel postViewmodel;
+  PostControllerBase({required this.postViewmodel});
 
   @computed
-  bool get isLoading => postViewModel.isLoading;
+  bool get isLoading => postViewmodel.isLoading;
 
   @computed
-  bool get isServerError => postViewModel.serverError;
+  bool get isServerError => postViewmodel.serverError;
 
   @computed
-  PostDetailDto? get post => postViewModel.post;
+  PostEntity? get post => postViewmodel.post;
 
   @computed
-  List<PostDetailDto>? get postList => postViewModel.postList;
+  List<PostEntity>? get postList => postViewmodel.postList;
 
   @computed
-  List<PostDetailDto>? get postListByFileType =>
-      postViewModel.postListByFileType;
+  List<PostEntity>? get postListByFileType => postViewmodel.postListByFileType;
 
   Future<void> list() async {
-    await postViewModel.list();
+    await postViewmodel.list();
   }
 
   Future<void> listByFileType(String type) async {
-    await postViewModel.listByFileType(type);
+    await postViewmodel.listByFileType(type);
   }
 
-  Future<void> register(PostRegisterDto data, File? file) async {
-    await postViewModel.register(data, file);
+  Future<void> register(PostRegisterParam param) async {
+    await postViewmodel.register(param);
   }
 
-  Future<void> update(String id, PostUpdateDto data, File? file) async {
-    await postViewModel.update(id, data, file);
+  Future<void> update(PostUpdateParam param) async {
+    await postViewmodel.update(param);
   }
 
   Future<void> remove(String id) async {
-    await postViewModel.remove(id);
+    await postViewmodel.remove(id);
   }
 
   Future<void> detail(String id) async {
-    await postViewModel.detail(id);
+    await postViewmodel.detail(id);
   }
 }

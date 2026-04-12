@@ -1,14 +1,14 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:pulse_post/app/core/services/local/local_storage_service.dart';
-import 'package:pulse_post/app/core/services/messages/result_message_service.dart';
-import 'package:pulse_post/app/features/domain/entities/user_entity.dart';
-import 'package:pulse_post/app/features/domain/params/users/user_login_param.dart';
-import 'package:pulse_post/app/features/domain/usecases/users/user_usecase_detail.dart';
-import 'package:pulse_post/app/features/domain/usecases/users/user_usecase_login.dart';
-import 'package:pulse_post/app/features/domain/usecases/users/user_usecase_register.dart';
-import 'package:pulse_post/app/features/domain/usecases/users/user_usecase_update.dart';
-import 'package:pulse_post/app/features/presentation/viewmodels/users/user_viewmodel.dart';
+import 'package:amago/app/core/services/local/local_storage_service.dart';
+import 'package:amago/app/core/services/messages/result_message_service.dart';
+import 'package:amago/app/features/domain/entities/user_entity.dart';
+import 'package:amago/app/features/domain/params/users/user_login_param.dart';
+import 'package:amago/app/features/domain/usecases/users/user_usecase_detail.dart';
+import 'package:amago/app/features/domain/usecases/users/user_usecase_login.dart';
+import 'package:amago/app/features/domain/usecases/users/user_usecase_register.dart';
+import 'package:amago/app/features/domain/usecases/users/user_usecase_update.dart';
+import 'package:amago/app/features/presentation/viewmodels/users/user_viewmodel.dart';
 import 'package:result_dart/result_dart.dart';
 
 class UserUsecaseLoginMock extends Mock implements UserUsecaseLogin {}

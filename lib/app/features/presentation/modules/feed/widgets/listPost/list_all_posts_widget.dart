@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-import 'package:pulse_post/app/features/presentation/controllers/posts/post_controller.dart';
-import 'package:pulse_post/app/features/presentation/modules/feed/widgets/details/post_detail_widget.dart';
-import 'package:pulse_post/app/core/utils/constants/images/image_constant.dart';
-import 'package:pulse_post/app/core/utils/constants/texts/text_constant.dart';
+import 'package:amago/app/features/presentation/controllers/posts/post_controller.dart';
+import 'package:amago/app/features/presentation/modules/feed/widgets/details/post_detail_widget.dart';
+import 'package:amago/app/core/utils/constants/images/image_constant.dart';
+import 'package:amago/app/core/utils/constants/texts/text_constant.dart';
 import 'package:uikit/uikit.dart';
 
 class ListAllPostsWidget extends StatelessWidget {

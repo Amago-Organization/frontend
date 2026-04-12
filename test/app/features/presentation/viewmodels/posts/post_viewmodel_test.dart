@@ -1,18 +1,18 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:pulse_post/app/core/services/messages/result_message_service.dart';
-import 'package:pulse_post/app/core/usecase/usecase.dart';
-import 'package:pulse_post/app/features/domain/entities/post_entity.dart';
-import 'package:pulse_post/app/features/domain/entities/user_sumary_entity.dart';
-import 'package:pulse_post/app/features/domain/params/posts/post_register_param.dart';
-import 'package:pulse_post/app/features/domain/params/posts/post_update_param.dart';
-import 'package:pulse_post/app/features/domain/usecases/posts/post_usecase_detail.dart';
-import 'package:pulse_post/app/features/domain/usecases/posts/post_usecase_list.dart';
-import 'package:pulse_post/app/features/domain/usecases/posts/post_usecase_list_by_file_type.dart';
-import 'package:pulse_post/app/features/domain/usecases/posts/post_usecase_register.dart';
-import 'package:pulse_post/app/features/domain/usecases/posts/post_usecase_remove.dart';
-import 'package:pulse_post/app/features/domain/usecases/posts/post_usecase_update.dart';
-import 'package:pulse_post/app/features/presentation/viewmodels/posts/post_viewmodel.dart';
+import 'package:amago/app/core/services/messages/result_message_service.dart';
+import 'package:amago/app/core/usecase/usecase.dart';
+import 'package:amago/app/features/domain/entities/post_entity.dart';
+import 'package:amago/app/features/domain/entities/user_sumary_entity.dart';
+import 'package:amago/app/features/domain/params/posts/post_register_param.dart';
+import 'package:amago/app/features/domain/params/posts/post_update_param.dart';
+import 'package:amago/app/features/domain/usecases/posts/post_usecase_detail.dart';
+import 'package:amago/app/features/domain/usecases/posts/post_usecase_list.dart';
+import 'package:amago/app/features/domain/usecases/posts/post_usecase_list_by_file_type.dart';
+import 'package:amago/app/features/domain/usecases/posts/post_usecase_register.dart';
+import 'package:amago/app/features/domain/usecases/posts/post_usecase_remove.dart';
+import 'package:amago/app/features/domain/usecases/posts/post_usecase_update.dart';
+import 'package:amago/app/features/presentation/viewmodels/posts/post_viewmodel.dart';
 import 'package:result_dart/result_dart.dart';
 
 class ResultMessageServiceMock extends Mock implements ResultMessageService {}
@@ -398,7 +398,7 @@ void main() {
         database.removeAt(index);
 
         expect(postViewmodel.serverError, false);
-        expect(database.any((element) => element.id == id,), false);
+        expect(database.any((element) => element.id == id), false);
 
         verify(() => postUsecaseRemoveMock(id)).called(1);
         verify(

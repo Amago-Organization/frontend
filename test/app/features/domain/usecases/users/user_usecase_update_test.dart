@@ -1,9 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:pulse_post/app/features/domain/entities/user_entity.dart';
-import 'package:pulse_post/app/features/domain/params/users/user_update_param.dart';
-import 'package:pulse_post/app/features/domain/repositories/user_repository.dart';
-import 'package:pulse_post/app/features/domain/usecases/users/user_usecase_update.dart';
+import 'package:amago/app/features/domain/entities/user_entity.dart';
+import 'package:amago/app/features/domain/params/users/user_update_param.dart';
+import 'package:amago/app/features/domain/repositories/user_repository.dart';
+import 'package:amago/app/features/domain/usecases/users/user_usecase_update.dart';
 import 'package:result_dart/result_dart.dart';
 
 class UserRepositoryMock extends Mock implements UserRepository {}

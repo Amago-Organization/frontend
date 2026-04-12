@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:go_router/go_router.dart';
-import 'package:pulse_post/app/features/domain/remocao/dtos/post/post_register_dto.dart';
-import 'package:pulse_post/app/features/presentation/controllers/posts/post_controller.dart';
-import 'package:pulse_post/app/features/presentation/controllers/upload/local_upload_controller.dart';
-import 'package:pulse_post/app/features/presentation/modules/feed/widgets/forms/post_register_form_widget.dart';
-import 'package:pulse_post/app/core/utils/constants/icons/icon_constant.dart';
-import 'package:pulse_post/app/core/utils/constants/texts/text_constant.dart';
+import 'package:amago/app/features/domain/params/posts/post_register_param.dart';
+import 'package:amago/app/features/presentation/controllers/posts/post_controller.dart';
+import 'package:amago/app/features/presentation/controllers/upload/local_upload_controller.dart';
+import 'package:amago/app/features/presentation/modules/feed/widgets/forms/post_register_form_widget.dart';
+import 'package:amago/app/core/utils/constants/icons/icon_constant.dart';
+import 'package:amago/app/core/utils/constants/texts/text_constant.dart';
 import 'package:uikit/uikit.dart';
 
 class PostRegisterPage extends StatefulWidget {
@@ -81,15 +81,13 @@ class _PostRegisterPageState extends State<PostRegisterPage> {
                           onPressed: () async {
                             if (formKey.currentState?.validate() ??
                                 false || uploadController.isSizeValid == true) {
-                              final data = PostRegisterDto(
+                              final data = PostRegisterParam(
                                 title: titleEC.text,
                                 description: descriptionEC.text,
+                                file: uploadController.file,
                               );
                               try {
-                                await postController.register(
-                                  data,
-                                  uploadController.file,
-                                );
+                                await postController.register(data);
                               } finally {
                                 if (postController.isLoading == false) {
                                   context.go('/feed');

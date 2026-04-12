@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:mobx/mobx.dart';
-import 'package:pulse_post/app/features/domain/enums/post_enum.dart';
+import 'package:amago/app/features/domain/enums/post_enum.dart';
 import 'package:image_picker/image_picker.dart';
 part 'local_upload_controller.g.dart';
 

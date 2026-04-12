@@ -1,5 +1,5 @@
-import 'package:pulse_post/app/core/exceptions/rest_exception.dart';
-import 'package:pulse_post/app/core/utils/constants/texts/text_constant.dart';
+import 'package:amago/app/core/exceptions/rest_exception.dart';
+import 'package:amago/app/core/utils/constants/texts/text_constant.dart';
 
 String getErrorMessage(Object failure) {
   if (failure is RestException) {

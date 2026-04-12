@@ -1,15 +1,15 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:pulse_post/app/core/exceptions/rest_exception.dart';
-import 'package:pulse_post/app/features/data/datasources/post/post_datasource.dart';
-import 'package:pulse_post/app/features/data/models/post_model.dart';
-import 'package:pulse_post/app/features/data/models/user_summary_model.dart';
-import 'package:pulse_post/app/features/data/repositories/post_repository_impl.dart';
-import 'package:pulse_post/app/features/domain/entities/post_entity.dart';
-import 'package:pulse_post/app/features/domain/params/posts/post_register_param.dart';
-import 'package:pulse_post/app/features/domain/params/posts/post_update_param.dart';
-import 'package:pulse_post/app/features/domain/repositories/post_repository.dart';
+import 'package:amago/app/core/exceptions/rest_exception.dart';
+import 'package:amago/app/features/data/datasources/post/post_datasource.dart';
+import 'package:amago/app/features/data/models/post_model.dart';
+import 'package:amago/app/features/data/models/user_summary_model.dart';
+import 'package:amago/app/features/data/repositories/post_repository_impl.dart';
+import 'package:amago/app/features/domain/entities/post_entity.dart';
+import 'package:amago/app/features/domain/params/posts/post_register_param.dart';
+import 'package:amago/app/features/domain/params/posts/post_update_param.dart';
+import 'package:amago/app/features/domain/repositories/post_repository.dart';
 
 class PostDatasourceMock extends Mock implements PostDatasource {}
 
@@ -395,7 +395,7 @@ void main() {
         expect(result.isError(), isTrue);
         expect(result.exceptionOrNull(), isA<RestException>());
         expect(error.statusCode, 500);
-        
+
         verify(() => datasourceMock.remove('1')).called(1);
       });
     });

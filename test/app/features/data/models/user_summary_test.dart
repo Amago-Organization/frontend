@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:pulse_post/app/features/data/models/user_summary_model.dart';
+import 'package:amago/app/features/data/models/user_summary_model.dart';
 
 void main() {
   group('UserSummaryModel', () {

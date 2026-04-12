@@ -1,11 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:dio/dio.dart';
-import 'package:pulse_post/app/core/services/client/client_service.dart';
-import 'package:pulse_post/app/core/utils/apis/api_backend.dart';
-import 'package:pulse_post/app/features/data/mappers/post_mapper.dart';
-import 'package:pulse_post/app/features/data/models/post_model.dart';
-import 'package:pulse_post/app/features/domain/params/posts/post_register_param.dart';
-import 'package:pulse_post/app/features/domain/params/posts/post_update_param.dart';
+import 'package:amago/app/core/services/client/client_service.dart';
+import 'package:amago/app/core/utils/apis/api_backend.dart';
+import 'package:amago/app/features/data/mappers/post_mapper.dart';
+import 'package:amago/app/features/data/models/post_model.dart';
+import 'package:amago/app/features/domain/params/posts/post_register_param.dart';
+import 'package:amago/app/features/domain/params/posts/post_update_param.dart';
 import 'package:result_dart/result_dart.dart';
 
 import './post_datasource.dart';

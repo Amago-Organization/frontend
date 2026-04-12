@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:go_router/go_router.dart';
-import 'package:pulse_post/app/features/presentation/controllers/upload/local_upload_controller.dart';
-import 'package:pulse_post/app/core/utils/constants/icons/icon_constant.dart';
-import 'package:pulse_post/app/core/utils/constants/texts/text_constant.dart';
+import 'package:amago/app/features/presentation/controllers/upload/local_upload_controller.dart';
+import 'package:amago/app/core/utils/constants/icons/icon_constant.dart';
+import 'package:amago/app/core/utils/constants/texts/text_constant.dart';
 import 'package:uikit/uikit.dart';
 import 'package:validatorless/validatorless.dart';
 
@@ -45,14 +45,14 @@ class UserUpdateFormWidget extends StatelessWidget {
                         builder: (context) => ModalSheet(
                           cancelText: TextConstant.camera,
                           continueText: TextConstant.files,
-                          cancelcontinueOnTap: (){
-                              uploadController.pickImageFromCamera();
-                              context.pop();
+                          cancelcontinueOnTap: () {
+                            uploadController.pickImageFromCamera();
+                            context.pop();
                           },
-                          continueOnTap: (){
+                          continueOnTap: () {
                             uploadController.uploadImage();
                             context.pop();
-                          } 
+                          },
                         ),
                       );
                     },

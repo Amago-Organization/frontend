@@ -5,18 +5,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:go_router/go_router.dart';
-import 'package:pulse_post/app/features/domain/remocao/dtos/post/post_update_dto.dart';
-import 'package:pulse_post/app/features/presentation/modules/feed/widgets/forms/post_update_form_widget.dart';
+import 'package:amago/app/features/domain/entities/post_entity.dart';
+import 'package:amago/app/features/domain/params/posts/post_update_param.dart';
+import 'package:amago/app/features/presentation/modules/feed/widgets/forms/post_update_form_widget.dart';
 import 'package:uikit/uikit.dart';
 
-import 'package:pulse_post/app/features/domain/remocao/dtos/post/post_detail_dto.dart';
-import 'package:pulse_post/app/features/presentation/controllers/posts/post_controller.dart';
-import 'package:pulse_post/app/features/presentation/controllers/upload/local_upload_controller.dart';
-import 'package:pulse_post/app/core/utils/constants/icons/icon_constant.dart';
-import 'package:pulse_post/app/core/utils/constants/texts/text_constant.dart';
+import 'package:amago/app/features/presentation/controllers/posts/post_controller.dart';
+import 'package:amago/app/features/presentation/controllers/upload/local_upload_controller.dart';
+import 'package:amago/app/core/utils/constants/icons/icon_constant.dart';
+import 'package:amago/app/core/utils/constants/texts/text_constant.dart';
 
 class PostUpdatePage extends StatefulWidget {
-  final PostDetailDto data;
+  final PostEntity data;
   const PostUpdatePage({super.key, required this.data});
 
   @override
@@ -120,16 +120,14 @@ class _PostUpdatePageState extends State<PostUpdatePage> {
                           onPressed: () async {
                             if (formKey.currentState?.validate() ??
                                 false || uploadController.isSizeValid == true) {
-                              final data = PostUpdateDto(
+                              final data = PostUpdateParam(
+                                id: widget.data.id,
+                                file: uploadController.file,
                                 title: titleEC.text,
                                 description: descriptionEC.text,
                               );
                               try {
-                                await postController.update(
-                                  widget.data.id,
-                                  data,
-                                  uploadController.file,
-                                );
+                                await postController.update(data);
                               } finally {
                                 if (postController.isLoading == false) {
                                   context.go('/my-profile');

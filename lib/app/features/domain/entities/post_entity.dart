@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:equatable/equatable.dart';
-import 'package:pulse_post/app/features/domain/entities/user_sumary_entity.dart';
+import 'package:amago/app/features/domain/entities/user_sumary_entity.dart';
 
 class PostEntity extends Equatable {
   final String id;
@@ -33,6 +33,4 @@ class PostEntity extends Equatable {
     updateAt,
     user,
   ];
-
- 
 }

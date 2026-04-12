@@ -1,8 +1,7 @@
 // auth_interceptor.dart
 import 'package:dio/dio.dart';
-import 'package:pulse_post/app/core/services/local/local_storage_service.dart';
-import 'package:pulse_post/app/features/domain/remocao/dtos/user/user_token_dto.dart';
-import 'package:pulse_post/app/core/utils/constants/local/local_storage_constant.dart';
+import 'package:amago/app/core/services/local/local_storage_service.dart';
+import 'package:amago/app/core/utils/constants/local/local_storage_constant.dart';
 
 final class AuthInterceptor extends InterceptorsWrapper {
   final LocalStorageService localStorageService;
@@ -20,8 +19,7 @@ final class AuthInterceptor extends InterceptorsWrapper {
       );
 
       if (accessToken != null) {
-        options.headers['Authorization'] =
-            'Bearer ${UserTokenDto.fromJson(accessToken).token}';
+        options.headers['Authorization'] = 'Bearer $accessToken';
       }
     }
 

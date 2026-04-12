@@ -1,6 +1,6 @@
 {
-    "name": "pulse_post",
-    "short_name": "pulse_post",
+    "name": "amago",
+    "short_name": "amago",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

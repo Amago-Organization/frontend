@@ -1,4 +1,4 @@
-import 'package:pulse_post/app/features/domain/entities/user_sumary_entity.dart';
+import 'package:amago/app/features/domain/entities/user_sumary_entity.dart';
 
 class UserSummaryModel extends UserSummaryEntity {
   const UserSummaryModel({required super.id, required super.name, super.image});

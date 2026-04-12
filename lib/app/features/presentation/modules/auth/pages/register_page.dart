@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:go_router/go_router.dart';
-import 'package:pulse_post/app/features/domain/remocao/dtos/user/user_register_dto.dart';
-import 'package:pulse_post/app/features/presentation/controllers/user/user_controller.dart';
-import 'package:pulse_post/app/features/presentation/modules/auth/widgets/forms/user_register_form_widget.dart';
-import 'package:pulse_post/app/core/utils/constants/texts/text_constant.dart';
+import 'package:amago/app/features/domain/params/users/user_register_param.dart';
+import 'package:amago/app/features/presentation/controllers/user/user_controller.dart';
+import 'package:amago/app/features/presentation/modules/auth/widgets/forms/user_register_form_widget.dart';
+import 'package:amago/app/core/utils/constants/texts/text_constant.dart';
 import 'package:uikit/uikit.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -74,7 +74,7 @@ class _RegisterPageState extends State<RegisterPage> {
                             text: TextConstant.register,
                             onPressed: () async {
                               if (formKey.currentState?.validate() ?? false) {
-                                final data = UserRegisterDto(
+                                final data = UserRegisterParam(
                                   name: nameEC.text,
                                   email: emailEC.text,
                                   password: passwordEC.text,

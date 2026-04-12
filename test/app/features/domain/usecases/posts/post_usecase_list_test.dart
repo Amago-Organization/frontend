@@ -1,10 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:pulse_post/app/core/usecase/usecase.dart';
-import 'package:pulse_post/app/features/data/models/user_summary_model.dart';
-import 'package:pulse_post/app/features/domain/entities/post_entity.dart';
-import 'package:pulse_post/app/features/domain/repositories/post_repository.dart';
-import 'package:pulse_post/app/features/domain/usecases/posts/post_usecase_list.dart';
+import 'package:amago/app/core/usecase/usecase.dart';
+import 'package:amago/app/features/data/models/user_summary_model.dart';
+import 'package:amago/app/features/domain/entities/post_entity.dart';
+import 'package:amago/app/features/domain/repositories/post_repository.dart';
+import 'package:amago/app/features/domain/usecases/posts/post_usecase_list.dart';
 import 'package:result_dart/result_dart.dart';
 
 class PostRepositoryMock extends Mock implements PostRepository {}
@@ -30,8 +30,7 @@ void main() {
           file: null,
           createdAt: "10/09/2025",
           updateAt: null,
-                    user: UserSummaryModel(id: "1", name: "name")
-
+          user: UserSummaryModel(id: "1", name: "name"),
         ),
         PostEntity(
           id: "2",
@@ -41,8 +40,7 @@ void main() {
           file: "image.png",
           createdAt: "10/09/2025",
           updateAt: null,
-                    user: UserSummaryModel(id: "1", name: "name")
-
+          user: UserSummaryModel(id: "1", name: "name"),
         ),
         PostEntity(
           id: "3",
@@ -52,8 +50,7 @@ void main() {
           file: "video.mp4",
           createdAt: "10/09/2025",
           updateAt: null,
-                    user: UserSummaryModel(id: "1", name: "name")
-
+          user: UserSummaryModel(id: "1", name: "name"),
         ),
       ];
 
@@ -71,7 +68,6 @@ void main() {
     });
 
     test("Deve retornar erro ao listar todos os posts criados", () async {
-
       when(
         () => repositoryMock.list(),
       ).thenAnswer((_) async => Failure(Exception("Erro ao listar")));

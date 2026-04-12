@@ -3,7 +3,7 @@
     <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
-        android:label="PulsePost"
+        android:label="Âmago"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

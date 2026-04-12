@@ -1,5 +1,4 @@
-
-import 'package:pulse_post/app/core/utils/envied/env.dart';
+import 'package:amago/app/core/utils/envied/env.dart';
 
 final class ApiBackend {
   static final String baseUrl = Env.baseUrl;

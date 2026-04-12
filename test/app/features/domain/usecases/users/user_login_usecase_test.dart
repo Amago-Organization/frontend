@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:pulse_post/app/features/domain/params/users/user_login_param.dart';
-import 'package:pulse_post/app/features/domain/repositories/user_repository.dart';
-import 'package:pulse_post/app/features/domain/usecases/users/user_usecase_login.dart';
+import 'package:amago/app/features/domain/params/users/user_login_param.dart';
+import 'package:amago/app/features/domain/repositories/user_repository.dart';
+import 'package:amago/app/features/domain/usecases/users/user_usecase_login.dart';
 import 'package:result_dart/result_dart.dart';
 
 class UserRepositoryMock extends Mock implements UserRepository {}
@@ -15,7 +15,6 @@ void main() {
     repositoryMock = UserRepositoryMock();
     usecase = UserUsecaseLogin(userRepository: repositoryMock);
   });
-  
 
   group("UserUsecaseLogin", () {
     late UserLoginParam input;

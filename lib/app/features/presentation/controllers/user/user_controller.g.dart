@@ -30,10 +30,10 @@ mixin _$UserController on UserControllerBase, Store {
     () => super.isServerError,
     name: 'UserControllerBase.isServerError',
   )).value;
-  Computed<UserDetailDto?>? _$userComputed;
+  Computed<UserEntity?>? _$userComputed;
 
   @override
-  UserDetailDto? get user => (_$userComputed ??= Computed<UserDetailDto?>(
+  UserEntity? get user => (_$userComputed ??= Computed<UserEntity?>(
     () => super.user,
     name: 'UserControllerBase.user',
   )).value;

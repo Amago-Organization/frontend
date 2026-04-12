@@ -6,9 +6,9 @@ import 'package:go_router/go_router.dart';
 import 'package:uikit/uikit.dart';
 import 'package:validatorless/validatorless.dart';
 
-import 'package:pulse_post/app/features/presentation/controllers/upload/local_upload_controller.dart';
-import 'package:pulse_post/app/core/utils/constants/icons/icon_constant.dart';
-import 'package:pulse_post/app/core/utils/constants/texts/text_constant.dart';
+import 'package:amago/app/features/presentation/controllers/upload/local_upload_controller.dart';
+import 'package:amago/app/core/utils/constants/icons/icon_constant.dart';
+import 'package:amago/app/core/utils/constants/texts/text_constant.dart';
 
 class PostUpdateFormWidget extends StatelessWidget {
   final GlobalKey<FormState> formKey;

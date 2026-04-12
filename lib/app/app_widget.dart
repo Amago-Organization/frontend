@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
-import 'package:pulse_post/app/app_bindings.dart';
-import 'package:pulse_post/app/app_routes.dart';
-import 'package:pulse_post/app/features/presentation/modules/auth/auth_module.dart';
+import 'package:amago/app/app_bindings.dart';
+import 'package:amago/app/app_routes.dart';
+import 'package:amago/app/features/presentation/modules/auth/auth_module.dart';
 import 'package:uikit/uikit.dart';
 
 class AppWidget extends StatelessWidget {
@@ -15,7 +15,7 @@ class AppWidget extends StatelessWidget {
       modules: [AuthModule()],
       builder: (context, routes, flutterGetItNavObserver) {
         return MaterialApp.router(
-          title: 'PulsePost',
+          title: 'Âmago',
           theme: theme,
           debugShowCheckedModeBanner: false,
           routerConfig: AppRoutes.route,

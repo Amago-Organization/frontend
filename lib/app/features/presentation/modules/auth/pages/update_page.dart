@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:go_router/go_router.dart';
+import 'package:amago/app/features/domain/entities/user_entity.dart';
+import 'package:amago/app/features/domain/params/users/user_update_param.dart';
 
-import 'package:pulse_post/app/features/domain/remocao/dtos/user/user_detail_dto.dart';
-import 'package:pulse_post/app/features/domain/remocao/dtos/user/user_update_dto.dart';
-import 'package:pulse_post/app/features/presentation/controllers/upload/local_upload_controller.dart';
-import 'package:pulse_post/app/features/presentation/controllers/user/user_controller.dart';
-import 'package:pulse_post/app/features/presentation/modules/auth/widgets/forms/user_update_form_widget.dart';
-import 'package:pulse_post/app/core/utils/constants/icons/icon_constant.dart';
-import 'package:pulse_post/app/core/utils/constants/texts/text_constant.dart';
+import 'package:amago/app/features/presentation/controllers/upload/local_upload_controller.dart';
+import 'package:amago/app/features/presentation/controllers/user/user_controller.dart';
+import 'package:amago/app/features/presentation/modules/auth/widgets/forms/user_update_form_widget.dart';
+import 'package:amago/app/core/utils/constants/icons/icon_constant.dart';
+import 'package:amago/app/core/utils/constants/texts/text_constant.dart';
 import 'package:uikit/uikit.dart';
 
 class UpdatePage extends StatefulWidget {
-  final UserDetailDto data;
+  final UserEntity data;
   const UpdatePage({super.key, required this.data});
 
   @override
@@ -91,15 +91,13 @@ class _UpdatePageState extends State<UpdatePage> {
                           onPressed: () async {
                             if (formKey.currentState?.validate() ??
                                 false || uploadController.isSizeValid == true) {
-                              final data = UserUpdateDto(
+                              final data = UserUpdateParam(
                                 name: nameEC.text,
                                 bio: bioEC.text,
+                                file: uploadController.file,
                               );
                               try {
-                                await userController.update(
-                                  data,
-                                  uploadController.file,
-                                );
+                                await userController.update(data);
                               } finally {
                                 if (userController.isLoading == false) {
                                   context.go('/my-profile');

@@ -1,78 +1,29 @@
-# Pulse Post
+# Âmago
 
-O Pulse Post é um aplicativo de feed de postagens inspirado no Instagram, desenvolvido como parte de um teste técnico, com o objetivo de demonstrar meus conhecimentos em Flutter, arquitetura de software e boas práticas de desenvolvimento.
+O Âmago é uma rede social criada para compartilhar memórias de momentos íntimos já vividos, despertando aquele gostinho do passado, profundo e marcante, que merece ser revivido mais uma vez.
 
-O projeto foi concebido e implementado em um período de 5 dias, priorizando organização, escalabilidade e clareza arquitetural.
+O projeto, antes chamado de *Pulse Post*, foi refatorado para que o aplicativo não seja apenas uma rede social de criação de posts, mas uma plataforma que traga mais significado aos usuários, priorizando práticas de gestão de projeto, qualidade de software, uso de IA e clareza arquitetural.
 
 Ao explorar as branches do repositório, é possível acompanhar a evolução do sistema e entender as decisões técnicas adotadas ao longo do desenvolvimento.
 
 ## Tecnologias e Abordagens
 
-O aplicativo foi desenvolvido seguindo a abordagem arquitetural MVVM (Model–View–ViewModel), com separação clara de responsabilidades em camadas. Para o gerenciamento de estado, foi utilizado o MobX, enquanto o GetIt foi adotado como gerenciador de dependências, promovendo modularidade e desacoplamento.
+O aplicativo foi desenvolvido seguindo os princípios da Clean Architecture, promovendo separação clara de responsabilidades, baixo acoplamento e alta testabilidade.
 
-Para comunicação com o backend (desenvolvido em Spring Boot), utilizei o Dio como cliente HTTP. Os arquivos de mídia (imagens e vídeos) são armazenados no Cloudinary, garantindo eficiência e escalabilidade no armazenamento.
+Para o gerenciamento de estado, foi utilizado o MobX, enquanto o GetIt foi adotado como gerenciador de dependências, promovendo modularidade e desacoplamento.
+
+Para comunicação com o backend (desenvolvido em Spring Boot), utilizei o Dio como cliente HTTP. Os arquivos de mídia (imagens e vídeos) são armazenados no Cloudinary, garantindo eficiência e escalabilidade.
 
 O projeto permite que o usuário:
 
-Tire fotos diretamente com a câmera do smartphone Android;
+Tire fotos diretamente com a câmera do smartphone Android
+Faça upload de imagens e vídeos armazenados localmente no dispositivo
 
-Faça upload de imagens e vídeos armazenados localmente no dispositivo.
+A navegação entre telas é gerenciada com o GoRouter, proporcionando uma estrutura de rotas organizada e previsível. Para a persistência segura de dados sensíveis, foi utilizado o Flutter Secure Storage.
 
-A navegação entre telas é gerenciada com o GoRouter, proporcionando uma estrutura de rotas mais organizada e previsível. Para a persistência segura de dados sensíveis de autenticação, foi utilizado o Flutter Secure Storage.
+Além disso, o Envied foi empregado para proteger informações sensíveis, como a baseUrl do backend. O projeto também conta com validações aplicadas nos controllers e por meio de Validators, garantindo maior confiabilidade dos dados.
 
-Além disso, o Envied foi empregado para proteger informações sensíveis, como a baseUrl do backend. O projeto também conta com diversas validações, aplicadas tanto nos controllers quanto por meio do uso de Validators, garantindo maior confiabilidade dos dados.
-
-Por fim, foi desenvolvida uma UI Kit própria, seguindo a metodologia Atomic Design, com foco na reutilização de componentes, padronização visual e escalabilidade da interface.
-
-## Arquitetura
-
-Conforme mencionado, o projeto segue a arquitetura MVVM, organizada em camadas bem definidas:
-
-### MVVM – Model, View e ViewModel
-
-#### Domain
-
-Camada responsável pela lógica de negócio da aplicação.
-
-- DTOs: Transferência e mapeamento de dados
-
-- Repositories: Definição das interfaces das regras de negócio
-
-- Enums: Enumeradores utilizados para controle e padronização de estados
-
-#### Data
-
-- Camada responsável pela integração com serviços externos e fontes de dados locais.
-
-- Repositories: Implementação das interfaces definidas no Domain
-
-- Services: Conexões com serviços externos e locais
-
-- Interceptors: Interceptadores (ex.: autenticação)
-
-- Exceptions: Lançamento e tratamento de exceções
-
-#### Presentation
-
-Camada responsável pela interface e interação com o usuário, organizada em módulos.
-
-- Controllers: Gerenciamento de estado da aplicação
-
-- ViewModels: Intermediação entre a lógica de negócio e a interface
-
-- Pages: Telas e widgets da aplicação
-
-#### Utils
-
-Utilitários gerais, como constantes, APIs e navegação.
-
-##### Arquivos principais:
-
-app_bindings.dart: Registro e gerenciamento das dependências do sistema
-
-app_routes.dart: Definição das rotas de navegação
-
-app_widget.dart: Ponto central de inicialização da aplicação
+Por fim, foi desenvolvida uma UI Kit própria, seguindo a metodologia Atomic Design, com foco na reutilização de componentes e padronização visual.
 
 ## Inicialização
 

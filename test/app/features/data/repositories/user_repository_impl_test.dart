@@ -1,15 +1,15 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:pulse_post/app/core/exceptions/rest_exception.dart';
-import 'package:pulse_post/app/features/data/datasources/user/user_datasource.dart';
-import 'package:pulse_post/app/features/data/models/user_model.dart';
-import 'package:pulse_post/app/features/data/repositories/user_repository_impl.dart';
-import 'package:pulse_post/app/features/domain/entities/user_entity.dart';
-import 'package:pulse_post/app/features/domain/params/users/user_login_param.dart';
-import 'package:pulse_post/app/features/domain/params/users/user_register_param.dart';
-import 'package:pulse_post/app/features/domain/params/users/user_update_param.dart';
-import 'package:pulse_post/app/features/domain/repositories/user_repository.dart';
+import 'package:amago/app/core/exceptions/rest_exception.dart';
+import 'package:amago/app/features/data/datasources/user/user_datasource.dart';
+import 'package:amago/app/features/data/models/user_model.dart';
+import 'package:amago/app/features/data/repositories/user_repository_impl.dart';
+import 'package:amago/app/features/domain/entities/user_entity.dart';
+import 'package:amago/app/features/domain/params/users/user_login_param.dart';
+import 'package:amago/app/features/domain/params/users/user_register_param.dart';
+import 'package:amago/app/features/domain/params/users/user_update_param.dart';
+import 'package:amago/app/features/domain/repositories/user_repository.dart';
 
 class UserDatasourceMock extends Mock implements UserDatasource {}
 

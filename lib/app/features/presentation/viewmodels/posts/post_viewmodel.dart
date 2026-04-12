@@ -1,19 +1,19 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:mobx/mobx.dart';
-import 'package:pulse_post/app/core/errors/error_handler.dart';
+import 'package:amago/app/core/errors/error_handler.dart';
 
-import 'package:pulse_post/app/core/services/messages/result_message_service.dart';
-import 'package:pulse_post/app/core/usecase/usecase.dart';
-import 'package:pulse_post/app/core/utils/constants/texts/text_constant.dart';
-import 'package:pulse_post/app/features/domain/entities/post_entity.dart';
-import 'package:pulse_post/app/features/domain/params/posts/post_register_param.dart';
-import 'package:pulse_post/app/features/domain/params/posts/post_update_param.dart';
-import 'package:pulse_post/app/features/domain/usecases/posts/post_usecase_detail.dart';
-import 'package:pulse_post/app/features/domain/usecases/posts/post_usecase_list.dart';
-import 'package:pulse_post/app/features/domain/usecases/posts/post_usecase_list_by_file_type.dart';
-import 'package:pulse_post/app/features/domain/usecases/posts/post_usecase_register.dart';
-import 'package:pulse_post/app/features/domain/usecases/posts/post_usecase_remove.dart';
-import 'package:pulse_post/app/features/domain/usecases/posts/post_usecase_update.dart';
+import 'package:amago/app/core/services/messages/result_message_service.dart';
+import 'package:amago/app/core/usecase/usecase.dart';
+import 'package:amago/app/core/utils/constants/texts/text_constant.dart';
+import 'package:amago/app/features/domain/entities/post_entity.dart';
+import 'package:amago/app/features/domain/params/posts/post_register_param.dart';
+import 'package:amago/app/features/domain/params/posts/post_update_param.dart';
+import 'package:amago/app/features/domain/usecases/posts/post_usecase_detail.dart';
+import 'package:amago/app/features/domain/usecases/posts/post_usecase_list.dart';
+import 'package:amago/app/features/domain/usecases/posts/post_usecase_list_by_file_type.dart';
+import 'package:amago/app/features/domain/usecases/posts/post_usecase_register.dart';
+import 'package:amago/app/features/domain/usecases/posts/post_usecase_remove.dart';
+import 'package:amago/app/features/domain/usecases/posts/post_usecase_update.dart';
 
 part 'post_viewmodel.g.dart';
 
@@ -182,4 +182,3 @@ abstract class PostViewmodelBase with Store {
     isLoading = false;
   }
 }
-

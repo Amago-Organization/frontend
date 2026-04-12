@@ -1,4 +1,4 @@
-import 'package:pulse_post/app/features/domain/entities/user_entity.dart';
+import 'package:amago/app/features/domain/entities/user_entity.dart';
 
 class UserModel extends UserEntity {
   const UserModel({

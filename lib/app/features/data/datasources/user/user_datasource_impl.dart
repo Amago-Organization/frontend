@@ -1,12 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:dio/dio.dart';
-import 'package:pulse_post/app/core/services/client/client_service.dart';
-import 'package:pulse_post/app/core/utils/apis/api_backend.dart';
-import 'package:pulse_post/app/features/data/mappers/user_mapper.dart';
-import 'package:pulse_post/app/features/data/models/user_model.dart';
-import 'package:pulse_post/app/features/domain/params/users/user_login_param.dart';
-import 'package:pulse_post/app/features/domain/params/users/user_register_param.dart';
-import 'package:pulse_post/app/features/domain/params/users/user_update_param.dart';
+import 'package:amago/app/core/services/client/client_service.dart';
+import 'package:amago/app/core/utils/apis/api_backend.dart';
+import 'package:amago/app/features/data/mappers/user_mapper.dart';
+import 'package:amago/app/features/data/models/user_model.dart';
+import 'package:amago/app/features/domain/params/users/user_login_param.dart';
+import 'package:amago/app/features/domain/params/users/user_register_param.dart';
+import 'package:amago/app/features/domain/params/users/user_update_param.dart';
 
 import 'user_datasource.dart';
 

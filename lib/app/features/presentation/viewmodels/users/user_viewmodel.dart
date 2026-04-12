@@ -1,21 +1,21 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:mobx/mobx.dart';
-import 'package:pulse_post/app/core/errors/error_handler.dart';
-import 'package:pulse_post/app/core/exceptions/rest_exception.dart';
+import 'package:amago/app/core/errors/error_handler.dart';
+import 'package:amago/app/core/exceptions/rest_exception.dart';
 
-import 'package:pulse_post/app/core/services/local/local_storage_service.dart';
-import 'package:pulse_post/app/core/services/messages/result_message_service.dart';
-import 'package:pulse_post/app/core/usecase/usecase.dart';
-import 'package:pulse_post/app/core/utils/constants/local/local_storage_constant.dart';
-import 'package:pulse_post/app/core/utils/constants/texts/text_constant.dart';
-import 'package:pulse_post/app/features/domain/entities/user_entity.dart';
-import 'package:pulse_post/app/features/domain/params/users/user_login_param.dart';
-import 'package:pulse_post/app/features/domain/params/users/user_register_param.dart';
-import 'package:pulse_post/app/features/domain/params/users/user_update_param.dart';
-import 'package:pulse_post/app/features/domain/usecases/users/user_usecase_detail.dart';
-import 'package:pulse_post/app/features/domain/usecases/users/user_usecase_login.dart';
-import 'package:pulse_post/app/features/domain/usecases/users/user_usecase_register.dart';
-import 'package:pulse_post/app/features/domain/usecases/users/user_usecase_update.dart';
+import 'package:amago/app/core/services/local/local_storage_service.dart';
+import 'package:amago/app/core/services/messages/result_message_service.dart';
+import 'package:amago/app/core/usecase/usecase.dart';
+import 'package:amago/app/core/utils/constants/local/local_storage_constant.dart';
+import 'package:amago/app/core/utils/constants/texts/text_constant.dart';
+import 'package:amago/app/features/domain/entities/user_entity.dart';
+import 'package:amago/app/features/domain/params/users/user_login_param.dart';
+import 'package:amago/app/features/domain/params/users/user_register_param.dart';
+import 'package:amago/app/features/domain/params/users/user_update_param.dart';
+import 'package:amago/app/features/domain/usecases/users/user_usecase_detail.dart';
+import 'package:amago/app/features/domain/usecases/users/user_usecase_login.dart';
+import 'package:amago/app/features/domain/usecases/users/user_usecase_register.dart';
+import 'package:amago/app/features/domain/usecases/users/user_usecase_update.dart';
 
 part 'user_viewmodel.g.dart';
 

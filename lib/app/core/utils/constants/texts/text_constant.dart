@@ -3,7 +3,7 @@ final class TextConstant {
   static String myPosts = 'Minhas Publicações';
 
   static String logout = 'Sair';
-  static String sucessLoggingAccountTitle = 'Bem-vindo ao PulsePost!';
+  static String sucessLoggingAccountTitle = 'Bem-vindo ao Âmago!';
 
   static String sucessRegisterAccountTitle = 'Conta Criada com Sucesso!';
 
@@ -21,7 +21,7 @@ final class TextConstant {
   static String logoutAccountTitle = 'Sair da Conta?';
   static String deletePostTitle = 'Apagar post?';
   static String deletePostMessage =
-      'Ao confirmar, o post será apagado permanentemente do PulsePost.';
+      'Ao confirmar, o post será apagado permanentemente do Âmago.';
 
   static String createdAt(String dateTime) => "Postado em $dateTime";
   static String updatedAt(String dateTime) => "Editado em $dateTime";
@@ -60,8 +60,8 @@ final class TextConstant {
   static String save = 'Salvar';
   static String public = 'Publish';
 
-  static String serverError = 'O PulsePost está fora do ar!';
-  static String fieldError = "Campo obrigarório!";
+  static String serverError = 'O Âmago está fora do ar!';
+  static String fieldError = "Campo obrigatório!";
   static String emailFieldError = "O campo deve ser um e-mail válido!";
   static String passwordFiledMinCaractersError = 'O mínimo de caracters é 6!';
 

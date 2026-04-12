@@ -1,12 +1,12 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:pulse_post/app/core/services/client/client_service.dart';
-import 'package:pulse_post/app/features/data/datasources/post/post_datasource.dart';
-import 'package:pulse_post/app/features/data/datasources/post/post_datasource_impl.dart';
-import 'package:pulse_post/app/features/data/models/post_model.dart';
-import 'package:pulse_post/app/features/domain/params/posts/post_register_param.dart';
-import 'package:pulse_post/app/features/domain/params/posts/post_update_param.dart';
+import 'package:amago/app/core/services/client/client_service.dart';
+import 'package:amago/app/features/data/datasources/post/post_datasource.dart';
+import 'package:amago/app/features/data/datasources/post/post_datasource_impl.dart';
+import 'package:amago/app/features/data/models/post_model.dart';
+import 'package:amago/app/features/domain/params/posts/post_register_param.dart';
+import 'package:amago/app/features/domain/params/posts/post_update_param.dart';
 
 class ClientServiceMock extends Mock implements ClientService {}
 

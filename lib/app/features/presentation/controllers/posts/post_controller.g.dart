@@ -23,26 +23,26 @@ mixin _$PostController on PostControllerBase, Store {
     () => super.isServerError,
     name: 'PostControllerBase.isServerError',
   )).value;
-  Computed<PostDetailDto?>? _$postComputed;
+  Computed<PostEntity?>? _$postComputed;
 
   @override
-  PostDetailDto? get post => (_$postComputed ??= Computed<PostDetailDto?>(
+  PostEntity? get post => (_$postComputed ??= Computed<PostEntity?>(
     () => super.post,
     name: 'PostControllerBase.post',
   )).value;
-  Computed<List<PostDetailDto>?>? _$postListComputed;
+  Computed<List<PostEntity>?>? _$postListComputed;
 
   @override
-  List<PostDetailDto>? get postList =>
-      (_$postListComputed ??= Computed<List<PostDetailDto>?>(
+  List<PostEntity>? get postList =>
+      (_$postListComputed ??= Computed<List<PostEntity>?>(
         () => super.postList,
         name: 'PostControllerBase.postList',
       )).value;
-  Computed<List<PostDetailDto>?>? _$postListByFileTypeComputed;
+  Computed<List<PostEntity>?>? _$postListByFileTypeComputed;
 
   @override
-  List<PostDetailDto>? get postListByFileType =>
-      (_$postListByFileTypeComputed ??= Computed<List<PostDetailDto>?>(
+  List<PostEntity>? get postListByFileType =>
+      (_$postListByFileTypeComputed ??= Computed<List<PostEntity>?>(
         () => super.postListByFileType,
         name: 'PostControllerBase.postListByFileType',
       )).value;
