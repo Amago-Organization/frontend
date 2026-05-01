@@ -31,6 +31,8 @@ jobs:
 
       - name: Run Build Runner
         run: flutter pub run build_runner build --delete-conflicting-outputs
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
 
       - name: Analyze Project
         run: flutter analyze
