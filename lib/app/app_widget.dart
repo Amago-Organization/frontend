@@ -1,3 +1,4 @@
+import 'package:amago/app/features/presentation/modules/feed/feed_module.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:amago/app/app_bindings.dart';
@@ -12,7 +13,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return FlutterGetIt(
       bindings: AppBindings(),
-      modules: [AuthModule()],
+      modules: [AuthModule(), FeedModule()],
       builder: (context, routes, flutterGetItNavObserver) {
         return MaterialApp.router(
           title: 'Âmago',

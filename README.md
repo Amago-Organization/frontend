@@ -8,22 +8,64 @@ Ao explorar as branches do repositório, é possível acompanhar a evolução do
 
 ## Tecnologias e Abordagens
 
-O aplicativo foi desenvolvido seguindo os princípios da Clean Architecture, promovendo separação clara de responsabilidades, baixo acoplamento e alta testabilidade.
+O aplicativo foi desenvolvido utilizando Flutter e Dart, seguindo os princípios da Clean Architecture, promovendo separação clara de responsabilidades, baixo acoplamento e alta testabilidade.
 
-Para o gerenciamento de estado, foi utilizado o MobX, enquanto o GetIt foi adotado como gerenciador de dependências, promovendo modularidade e desacoplamento.
+A arquitetura foi organizada em três camadas principais:
 
-Para comunicação com o backend (desenvolvido em Spring Boot), utilizei o Dio como cliente HTTP. Os arquivos de mídia (imagens e vídeos) são armazenados no Cloudinary, garantindo eficiência e escalabilidade.
+- **Domain** → Contém as regras de negócio, entidades, contratos de repositórios, parâmetros e casos de uso.
+- **Data** → Responsável pela comunicação com APIs externas, serialização de dados, mapeamentos e implementação dos contratos de repositório.
+- **Presentation** → Responsável pela interface do usuário, gerenciamento de estado, navegação e interação com os controllers.
 
-O projeto permite que o usuário:
+Para gerenciamento de estado, foi utilizado o MobX, enquanto o GetIt foi adotado para injeção e gerenciamento de dependências.
 
-Tire fotos diretamente com a câmera do smartphone Android
-Faça upload de imagens e vídeos armazenados localmente no dispositivo
+A comunicação com o backend, desenvolvido em Spring Boot, é realizada por meio do Dio, oferecendo interceptação de requisições, tratamento de erros e maior flexibilidade na camada de rede.
 
-A navegação entre telas é gerenciada com o GoRouter, proporcionando uma estrutura de rotas organizada e previsível. Para a persistência segura de dados sensíveis, foi utilizado o Flutter Secure Storage.
+Para navegação entre telas, foi utilizado o GoRouter, proporcionando organização e previsibilidade no fluxo de rotas.
 
-Além disso, o Envied foi empregado para proteger informações sensíveis, como a baseUrl do backend. O projeto também conta com validações aplicadas nos controllers e por meio de Validators, garantindo maior confiabilidade dos dados.
+O armazenamento seguro de dados sensíveis, como tokens de autenticação, é realizado com Flutter Secure Storage.
 
-Por fim, foi desenvolvida uma UI Kit própria, seguindo a metodologia Atomic Design, com foco na reutilização de componentes e padronização visual.
+As variáveis de ambiente são protegidas utilizando Envied, permitindo ocultação de informações sensíveis como a URL base da API.
+
+O aplicativo também oferece integração com recursos nativos do Android, permitindo:
+
+- Captura de fotos diretamente pela câmera do dispositivo
+- Upload de imagens e vídeos armazenados localmente
+
+Por fim, o projeto tambném conta com uma UI Kit própria seguindo os princípios do **Atomic Design**, promovendo reutilização de componentes, padronização visual e escalabilidade da interface.
+
+## Organização do Projeto
+
+A estrutura do projeto segue os princípios da Clean Architecture:
+
+```text
+app/
+├── features/
+│   ├── domain/
+│   │   ├── entities/
+│   │   ├── enums/
+│   │   ├── params/
+│   │   ├── repositories/
+│   │   └── usecases/
+│   ├── data/
+│   │   ├── datasources/
+│   │   ├── models/
+│   │   ├── mappers/
+│   │   └── repositories/
+│   ├── presentation/
+│   │   ├── controllers/
+│   │   ├── modules/
+│   │   └── viewmodels/
+├── core/
+│   ├── errors/
+│   ├── exceptions/
+│   ├── interceptors/
+│   ├── services/
+│   ├── usecase/
+└── └── utils/
+
+```
+
+Essa organização permite que cada funcionalidade evolua de forma independente, mantendo a clareza arquitetural e facilitando a manutenção do código.
 
 ## Inicialização
 
