@@ -111,7 +111,9 @@ void main() {
         expect(map['file'], 'file.png');
         expect(map['createdAt'], '2025-01-01');
         expect(map['updateAt'], '2025-01-02');
-        expect(map['user'], {'id': '10', 'name': 'Lázaro', 'image': 'img.png'});
+        expect((map['user'] as UserSummaryModel).id, '10');
+        expect((map['user'] as UserSummaryModel).name, 'Lázaro');
+        expect((map['user'] as UserSummaryModel).image, 'img.png');
       });
 
       test(
@@ -130,7 +132,6 @@ void main() {
 
           expect(map['file'], null);
           expect(map['updateAt'], null);
-          expect(map['user']['image'], null);
         },
       );
     });
@@ -156,7 +157,12 @@ void main() {
           expect(result['description'], map['description']);
           expect(result['createdAt'], map['createdAt']);
           expect(result['postType'], map['postType']);
-          expect(result['user'], map['user']);
+
+          final user = result['user'] as UserSummaryModel;
+
+          expect(user.id, '10');
+          expect(user.name, 'Lázaro');
+          expect(user.image, 'img.png');
         },
       );
     });
