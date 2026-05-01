@@ -1,4 +1,3 @@
-library atomic;
 
 export 'atoms/atom.dart';
 export 'molecules/molecule.dart';

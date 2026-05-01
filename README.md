@@ -1,78 +1,71 @@
-# Pulse Post
+# Âmago
 
-O Pulse Post é um aplicativo de feed de postagens inspirado no Instagram, desenvolvido como parte de um teste técnico, com o objetivo de demonstrar meus conhecimentos em Flutter, arquitetura de software e boas práticas de desenvolvimento.
+O Âmago é uma rede social criada para compartilhar memórias de momentos íntimos já vividos, despertando aquele gostinho do passado, profundo e marcante, que merece ser revivido mais uma vez.
 
-O projeto foi concebido e implementado em um período de 5 dias, priorizando organização, escalabilidade e clareza arquitetural.
+O projeto, antes chamado de *Pulse Post*, foi refatorado para que o aplicativo não seja apenas uma rede social de criação de posts, mas uma plataforma que traga mais significado aos usuários, priorizando práticas de gestão de projeto, qualidade de software, uso de IA e clareza arquitetural.
 
 Ao explorar as branches do repositório, é possível acompanhar a evolução do sistema e entender as decisões técnicas adotadas ao longo do desenvolvimento.
 
 ## Tecnologias e Abordagens
 
-O aplicativo foi desenvolvido seguindo a abordagem arquitetural MVVM (Model–View–ViewModel), com separação clara de responsabilidades em camadas. Para o gerenciamento de estado, foi utilizado o MobX, enquanto o GetIt foi adotado como gerenciador de dependências, promovendo modularidade e desacoplamento.
+O aplicativo foi desenvolvido utilizando Flutter e Dart, seguindo os princípios da Clean Architecture, promovendo separação clara de responsabilidades, baixo acoplamento e alta testabilidade.
 
-Para comunicação com o backend (desenvolvido em Spring Boot), utilizei o Dio como cliente HTTP. Os arquivos de mídia (imagens e vídeos) são armazenados no Cloudinary, garantindo eficiência e escalabilidade no armazenamento.
+A arquitetura foi organizada em três camadas principais:
 
-O projeto permite que o usuário:
+- **Domain** → Contém as regras de negócio, entidades, contratos de repositórios, parâmetros e casos de uso.
+- **Data** → Responsável pela comunicação com APIs externas, serialização de dados, mapeamentos e implementação dos contratos de repositório.
+- **Presentation** → Responsável pela interface do usuário, gerenciamento de estado, navegação e interação com os controllers.
 
-Tire fotos diretamente com a câmera do smartphone Android;
+Para gerenciamento de estado, foi utilizado o MobX, enquanto o GetIt foi adotado para injeção e gerenciamento de dependências.
 
-Faça upload de imagens e vídeos armazenados localmente no dispositivo.
+A comunicação com o backend, desenvolvido em Spring Boot, é realizada por meio do Dio, oferecendo interceptação de requisições, tratamento de erros e maior flexibilidade na camada de rede.
 
-A navegação entre telas é gerenciada com o GoRouter, proporcionando uma estrutura de rotas mais organizada e previsível. Para a persistência segura de dados sensíveis de autenticação, foi utilizado o Flutter Secure Storage.
+Para navegação entre telas, foi utilizado o GoRouter, proporcionando organização e previsibilidade no fluxo de rotas.
 
-Além disso, o Envied foi empregado para proteger informações sensíveis, como a baseUrl do backend. O projeto também conta com diversas validações, aplicadas tanto nos controllers quanto por meio do uso de Validators, garantindo maior confiabilidade dos dados.
+O armazenamento seguro de dados sensíveis, como tokens de autenticação, é realizado com Flutter Secure Storage.
 
-Por fim, foi desenvolvida uma UI Kit própria, seguindo a metodologia Atomic Design, com foco na reutilização de componentes, padronização visual e escalabilidade da interface.
+As variáveis de ambiente são protegidas utilizando Envied, permitindo ocultação de informações sensíveis como a URL base da API.
 
-## Arquitetura
+O aplicativo também oferece integração com recursos nativos do Android, permitindo:
 
-Conforme mencionado, o projeto segue a arquitetura MVVM, organizada em camadas bem definidas:
+- Captura de fotos diretamente pela câmera do dispositivo
+- Upload de imagens e vídeos armazenados localmente
 
-### MVVM – Model, View e ViewModel
+Por fim, o projeto tambném conta com uma UI Kit própria seguindo os princípios do **Atomic Design**, promovendo reutilização de componentes, padronização visual e escalabilidade da interface.
 
-#### Domain
+## Organização do Projeto
 
-Camada responsável pela lógica de negócio da aplicação.
+A estrutura do projeto segue os princípios da Clean Architecture:
 
-- DTOs: Transferência e mapeamento de dados
+```text
+app/
+├── features/
+│   ├── domain/
+│   │   ├── entities/
+│   │   ├── enums/
+│   │   ├── params/
+│   │   ├── repositories/
+│   │   └── usecases/
+│   ├── data/
+│   │   ├── datasources/
+│   │   ├── models/
+│   │   ├── mappers/
+│   │   └── repositories/
+│   ├── presentation/
+│   │   ├── controllers/
+│   │   ├── modules/
+│   │   └── viewmodels/
+├── core/
+│   ├── errors/
+│   ├── exceptions/
+│   ├── interceptors/
+│   ├── services/
+│   ├── usecase/
+└── └── utils/
 
-- Repositories: Definição das interfaces das regras de negócio
+```
 
-- Enums: Enumeradores utilizados para controle e padronização de estados
-
-#### Data
-
-- Camada responsável pela integração com serviços externos e fontes de dados locais.
-
-- Repositories: Implementação das interfaces definidas no Domain
-
-- Services: Conexões com serviços externos e locais
-
-- Interceptors: Interceptadores (ex.: autenticação)
-
-- Exceptions: Lançamento e tratamento de exceções
-
-#### Presentation
-
-Camada responsável pela interface e interação com o usuário, organizada em módulos.
-
-- Controllers: Gerenciamento de estado da aplicação
-
-- ViewModels: Intermediação entre a lógica de negócio e a interface
-
-- Pages: Telas e widgets da aplicação
-
-#### Utils
-
-Utilitários gerais, como constantes, APIs e navegação.
-
-##### Arquivos principais:
-
-app_bindings.dart: Registro e gerenciamento das dependências do sistema
-
-app_routes.dart: Definição das rotas de navegação
-
-app_widget.dart: Ponto central de inicialização da aplicação
+Essa organização permite que cada funcionalidade evolua de forma independente, mantendo a clareza arquitetural e facilitando a manutenção do código.
 
 ## Inicialização
 

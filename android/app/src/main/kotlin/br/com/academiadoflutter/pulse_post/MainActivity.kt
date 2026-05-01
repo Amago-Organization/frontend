@@ -1,4 +1,4 @@
-package br.com.lazaroalexandre.pulse_post
+package br.com.lazaroalexandre.amago
 
 import io.flutter.embedding.android.FlutterActivity
 

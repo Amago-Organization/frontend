@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:pulse_post/app/app_widget.dart';
+import 'package:amago/app/app_widget.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
