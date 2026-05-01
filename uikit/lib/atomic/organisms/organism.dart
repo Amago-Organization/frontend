@@ -1,4 +1,3 @@
-library organism;
 
 export 'snackbar/snack_bar_listview.dart';
 export 'modal/modal_sheet.dart';

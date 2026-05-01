@@ -1,4 +1,3 @@
-library token;
 
 export 'typhography/style.dart';
 

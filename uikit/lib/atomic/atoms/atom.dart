@@ -1,4 +1,3 @@
-library atom;
 
 export 'text/text_default.dart';
 export 'button/button_default.dart';
