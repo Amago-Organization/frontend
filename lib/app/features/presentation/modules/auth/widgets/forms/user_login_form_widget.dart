@@ -39,6 +39,23 @@ class UserLoginFormWidget extends StatelessWidget {
             labelText: TextConstant.password,
             validator: Validatorless.multiple([
               Validatorless.min(6, TextConstant.passwordFiledMinCaractersError),
+              Validatorless.max(10, TextConstant.passwordFiledMaxCaractersError),
+              Validatorless.regex(                
+                RegExp(RegexToken.hasLowercase),
+                TextConstant.passwordFieldLowercaseError,
+              ),
+              Validatorless.regex(
+                RegExp(RegexToken.hasUppercase),
+                TextConstant.passwordFieldUppercaseError,
+              ),
+              Validatorless.regex(
+                RegExp(RegexToken.hasSpecialCharacter),
+                TextConstant.passwordFieldSpecialCharacterError,
+              ),
+              Validatorless.regex(
+                RegExp(RegexToken.hasNumber),
+                TextConstant.passwordFieldNumberError,
+              ),
               Validatorless.required(TextConstant.fieldError),
             ]),
           ),

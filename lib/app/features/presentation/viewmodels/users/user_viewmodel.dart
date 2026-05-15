@@ -105,6 +105,8 @@ abstract class UserViewmodelBase with Store {
 
   @action
   Future<void> details() async {
+    if (token == null) return;
+
     isLoading = true;
 
     final result = await detailUsecase(NoParams());
@@ -115,13 +117,15 @@ abstract class UserViewmodelBase with Store {
         user = success;
       },
       (failure) async {
-        serverError = true;
-        resultMessageService.showMessageError(getErrorMessage(failure));
-
         if (failure is RestException &&
             (failure.statusCode == 401 || failure.statusCode == 403)) {
+          serverError = false;
           await logout();
+          return;
         }
+
+        serverError = true;
+        resultMessageService.showMessageError(getErrorMessage(failure));
       },
     );
 
@@ -161,12 +165,14 @@ abstract class UserViewmodelBase with Store {
 
     user = null;
     token = null;
+    serverError = false;
 
     isLoading = false;
   }
 
   @action
   Future<void> loadToken() async {
-    token ??= await localStorageService.get(LocalStorageConstant.token);
+    final storedToken = await localStorageService.get(LocalStorageConstant.token);
+    token ??= storedToken?.trim().isEmpty == true ? null : storedToken;
   }
 }

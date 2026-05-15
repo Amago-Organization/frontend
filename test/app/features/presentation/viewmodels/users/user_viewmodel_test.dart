@@ -73,7 +73,7 @@ void main() {
       test("Deve logar com sucesso", () async {
         final param = UserLoginParam(
           email: "lazaro@gmail.com",
-          password: "123456",
+          password: "@Senha123",
         );
         late String output;
         final isValid = database.any((element) => element.email == param.email);
