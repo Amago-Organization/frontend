@@ -2,14 +2,13 @@
 import 'package:flutter/material.dart';
 import 'package:uikit/uikit.dart';
 
-class TextLabelL3Dark  extends StatelessWidget {
+class TextHeadlineH1Light extends StatelessWidget {
   final int? maxLines;
   final String text;
   final bool overflow;
   final Color? color;
-    final bool dropShadow;
-
-  const TextLabelL3Dark({
+  final bool dropShadow;
+  const TextHeadlineH1Light({
     super.key,
     this.maxLines,
     required this.text,
@@ -22,7 +21,7 @@ class TextLabelL3Dark  extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextDefault(
       text: text,
-      textStyle: Style.l3(color: ColorToken.dark),
+      textStyle: Style.h1(color: ColorToken.light),
       overflow: overflow,
       maxLines: maxLines,
       dropShadow: dropShadow,

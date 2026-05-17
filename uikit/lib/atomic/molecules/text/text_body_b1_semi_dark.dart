@@ -8,12 +8,15 @@ class TextBodyB1SemiDark extends StatelessWidget {
   final bool overflow;
   final Color? color;
   final bool isLimited;
+    final bool dropShadow;
+
   TextBodyB1SemiDark({
     super.key,
     this.maxLines,
     required this.text,
     this.overflow = false,
     this.color,
+    this.dropShadow = false,
     this.isLimited = false,
   });
 
@@ -27,6 +30,7 @@ class TextBodyB1SemiDark extends StatelessWidget {
       textStyle: Style.b1(color: ColorToken.semiDark),
       overflow: overflow,
       maxLines: maxLines,
+      dropShadow: dropShadow,
     );
   }
 }

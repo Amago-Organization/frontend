@@ -2,6 +2,9 @@ final class TextConstant {
   static String myProfile = 'Meu Perfil';
   static String myPosts = 'Minhas Publicações';
 
+  static String descriptionAmago = 'Porque cada memória guarda uma parte da sua história.';
+
+
   static String logout = 'Sair';
   static String sucessLoggingAccountTitle = 'Bem-vindo ao Âmago!';
 
@@ -85,7 +88,8 @@ final class TextConstant {
 
   static String uploadMedia = 'Upload da Mídia';
 
+  static String logginTitle = 'Login';
   static String loggin = 'Fazer Login';
   static String register = 'Registrar-se';
-  static String dontAccount = 'Clique aqui para registrar uma conta!';
+  static String dontAccount = 'Não tem conta ainda? Cadastra-se!';
 }

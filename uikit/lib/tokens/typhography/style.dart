@@ -15,7 +15,7 @@ final class Style {
       color: color);
 
   static TextStyle b1({Color? color}) => TextStyle(
-      fontSize: Font.sm,
+      fontSize: Font.xs,
       fontWeight: FontWeight.w400,
       fontFamily: 'Inter',
       color: color);
@@ -33,7 +33,7 @@ final class Style {
       color: color);
 
   static TextStyle l2({Color? color}) => TextStyle(
-      fontSize: Font.sm,
+      fontSize: Font.xs,
       fontWeight: FontWeight.w600,
       fontFamily: 'Inter',
       color: color);

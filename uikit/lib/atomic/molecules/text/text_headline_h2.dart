@@ -7,12 +7,14 @@ class TextHeadlineH2 extends StatelessWidget {
   final String text;
   final bool overflow;
   final Color? color;
+    final bool dropShadow;
+
   const TextHeadlineH2({
     super.key,
     this.maxLines,
     required this.text,
     this.overflow = false,
-    this.color,
+    this.color,  this.dropShadow = false,
   });
 
   @override
@@ -22,6 +24,7 @@ class TextHeadlineH2 extends StatelessWidget {
       textStyle: Style.h2(color: ColorToken.dark),
       overflow: overflow,
       maxLines: maxLines,
+      dropShadow: dropShadow,
     );
   }
 }

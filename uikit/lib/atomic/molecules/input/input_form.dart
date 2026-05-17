@@ -16,6 +16,8 @@ class InputForm extends StatelessWidget {
   final bool enable;
   final String? sufixIcon;
   final void Function()? sufixOnTap;
+  final bool errorShadow;
+  final bool obscureText;
 
   const InputForm({
     super.key,
@@ -31,6 +33,8 @@ class InputForm extends StatelessWidget {
     this.enable = true,
     this.sufixIcon,
     this.sufixOnTap,
+    this.errorShadow = false,
+    this.obscureText = false,
   });
 
   @override
@@ -39,12 +43,6 @@ class InputForm extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        enable
-            ? TextLabelL1Dark(text: labelText)
-            : TextBodyB1SemiDark(text: labelText),
-        const SizedBox(
-          height: SizeToken.xs,
-        ),
         InputDefault(
           enable: enable,
           prefix: prefix,
@@ -58,6 +56,8 @@ class InputForm extends StatelessWidget {
           hintText: hintText,
           sufixIcon: sufixIcon,
           sufixOnTap: sufixOnTap,
+          errorShadow: errorShadow,
+          obscureText: obscureText,
         ),
       ],
     );
