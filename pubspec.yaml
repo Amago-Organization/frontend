@@ -36,6 +36,7 @@ dependencies:
   video_player: ^2.10.1
   image_picker: ^1.2.1
   equatable: ^2.0.8
+  flutter_svg: ^2.3.0
 
 flutter_native_splash:
   color: "#ffffff"
