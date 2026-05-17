@@ -40,8 +40,11 @@ abstract class UserControllerBase with Store {
   }
 
   Future<void> load() async {
-    await userViewmodel.details();
     await userViewmodel.loadToken();
+
+    if (isTokenValid) {
+      await userViewmodel.details();
+    }
   }
 
   Future<void> update(UserUpdateParam params) async {

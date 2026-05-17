@@ -7,21 +7,24 @@ class TextLabelL4Info  extends StatelessWidget {
   final String text;
   final bool overflow;
   final Color? color;
+  final bool dropShadow;
   const TextLabelL4Info({
     super.key,
     this.maxLines,
     required this.text,
     this.overflow = false,
     this.color,
+    this.dropShadow = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextDefault(
       text: text,
-      textStyle: Style.l4(color: ColorToken.danger),
+      textStyle: Style.l4(color: ColorToken.light),
       overflow: overflow,
       maxLines: maxLines,
+      dropShadow: dropShadow,
     );
   }
 }

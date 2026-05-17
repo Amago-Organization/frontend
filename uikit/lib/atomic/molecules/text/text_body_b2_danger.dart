@@ -7,12 +7,15 @@ class TextBodyB2Danger extends StatelessWidget {
   final String text;
   final bool overflow;
   final Color? color;
+    final bool dropShadow;
+
   const TextBodyB2Danger({
     super.key,
     this.maxLines,
     required this.text,
     this.overflow = false,
     this.color,
+    this.dropShadow = false,
   });
 
   @override
@@ -22,6 +25,7 @@ class TextBodyB2Danger extends StatelessWidget {
       textStyle: Style.b2(color: ColorToken.danger),
       overflow: overflow,
       maxLines: maxLines,
+      dropShadow: dropShadow,
     );
   }
 }

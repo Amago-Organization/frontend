@@ -19,8 +19,8 @@ void main() {
   group("UserUsecaseLogin", () {
     late UserLoginParam input;
     late String output;
-    test("Deve fAzer login de usuário", () async {
-      input = UserLoginParam(email: "lazaro@gmail.com", password: "1234");
+    test("Deve fazer login de usuário", () async {
+      input = UserLoginParam(email: "lazaro@gmail.com", password: "@Senha123");
 
       output = "token_válido";
 
@@ -37,7 +37,7 @@ void main() {
     });
 
     test("Deve retornar erro ao fazer login de usuário", () async {
-      input = UserLoginParam(email: "lazaro@gmail.com", password: "1234");
+      input = UserLoginParam(email: "lazaro@gmail.com", password: "@Senha123");
 
       when(
         () => repositoryMock.login(input),
@@ -49,6 +49,12 @@ void main() {
       expect(result.exceptionOrNull(), isA<Exception>());
 
       verify(() => repositoryMock.login(input)).called(1);
+    });
+
+    test("Deve lançar exceção para senha inválida", () async {
+      final input = UserLoginParam(email: "lazaro@gmail.com", password: "1234");
+
+      expect(() => usecase(input), throwsA(isA<Exception>()));
     });
   });
 }

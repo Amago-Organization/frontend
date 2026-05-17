@@ -31,8 +31,8 @@ class ProfileMenuNavDetail extends StatelessWidget {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    ColorToken.secundary,
-                    ColorToken.primary,
+                    ColorToken.dark,
+                    ColorToken.neutral,
                   ],
                 ),
               ),

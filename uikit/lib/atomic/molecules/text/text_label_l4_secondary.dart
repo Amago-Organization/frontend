@@ -7,12 +7,16 @@ class TextLabelL4Secondary  extends StatelessWidget {
   final String text;
   final bool overflow;
   final Color? color;
+    final bool dropShadow;
+
   const TextLabelL4Secondary({
     super.key,
     this.maxLines,
     required this.text,
     this.overflow = false,
     this.color,
+    this.dropShadow = false,
+
   });
 
   @override
@@ -22,6 +26,7 @@ class TextLabelL4Secondary  extends StatelessWidget {
       textStyle: Style.l4(color: ColorToken.semiDark),
       overflow: overflow,
       maxLines: maxLines,
+      dropShadow: dropShadow,
     );
   }
 }

@@ -7,12 +7,15 @@ class TextLabelL6SemiDark  extends StatelessWidget {
   final String text;
   final bool overflow;
   final Color? color;
+    final bool dropShadow;
+
   const TextLabelL6SemiDark({
     super.key,
     this.maxLines,
     required this.text,
     this.overflow = false,
     this.color,
+    this.dropShadow = false,
   });
 
   @override
@@ -22,6 +25,7 @@ class TextLabelL6SemiDark  extends StatelessWidget {
       textStyle: Style.l6(color: ColorToken.semiDark),
       overflow: overflow,
       maxLines: maxLines,
+      dropShadow: dropShadow,
     );
   }
 }

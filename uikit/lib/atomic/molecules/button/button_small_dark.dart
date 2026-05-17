@@ -16,7 +16,7 @@ class ButtonSmallDark extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ButtonDefault(
-      padding: const EdgeInsets.all(SizeToken.sm),
+      padding: const EdgeInsets.symmetric(horizontal: SizeToken.lg, vertical: SizeToken.xs),
       backgroundColor: ColorToken.dark,
       onPressed: isLoading ? null : onPressed,
       child: isLoading

@@ -44,6 +44,7 @@ app/
 │   │   ├── entities/
 │   │   ├── enums/
 │   │   ├── params/
+│   │   ├── value_objects/
 │   │   ├── repositories/
 │   │   └── usecases/
 │   ├── data/

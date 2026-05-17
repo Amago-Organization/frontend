@@ -7,12 +7,14 @@ class TextBodyB2Dark extends StatelessWidget {
   final String text;
   final bool overflow;
   final Color? color;
+  final bool dropShadow;
   const TextBodyB2Dark({
     super.key,
     this.maxLines,
     required this.text,
     this.overflow = false,
     this.color,
+    this.dropShadow = false,
   });
 
   @override
@@ -22,6 +24,7 @@ class TextBodyB2Dark extends StatelessWidget {
       textStyle: Style.b2(color: ColorToken.dark),
       overflow: overflow,
       maxLines: maxLines,
+      dropShadow: dropShadow,
     );
   }
 }

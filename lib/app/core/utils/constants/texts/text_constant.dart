@@ -2,6 +2,9 @@ final class TextConstant {
   static String myProfile = 'Meu Perfil';
   static String myPosts = 'Minhas Publicações';
 
+  static String descriptionAmago = 'Porque cada memória guarda uma parte da sua história.';
+
+
   static String logout = 'Sair';
   static String sucessLoggingAccountTitle = 'Bem-vindo ao Âmago!';
 
@@ -64,6 +67,14 @@ final class TextConstant {
   static String fieldError = "Campo obrigatório!";
   static String emailFieldError = "O campo deve ser um e-mail válido!";
   static String passwordFiledMinCaractersError = 'O mínimo de caracters é 6!';
+  static String passwordFiledMaxCaractersError = 'O máximo de caracters é 10!';
+  static String passwordFieldLowercaseError =
+      'Deve conter ao menos 1 caractere minúsculo!';
+  static String passwordFieldUppercaseError =
+      'Deve conter ao menos 1 caractere maiúsculo!';
+  static String passwordFieldSpecialCharacterError =
+      'Deve conter ao menos 1 caractere especial!\nEx: !@#\$%&*()_+=|<>?{}[]~-';
+  static String passwordFieldNumberError = 'Deve conter ao menos 1 número!';
 
   static String postEmpty = 'Nenhum post encontrado!';
   static String name = 'Nome';
@@ -77,7 +88,8 @@ final class TextConstant {
 
   static String uploadMedia = 'Upload da Mídia';
 
+  static String logginTitle = 'Login';
   static String loggin = 'Fazer Login';
   static String register = 'Registrar-se';
-  static String dontAccount = 'Clique aqui para registrar uma conta!';
+  static String dontAccount = 'Não tem conta ainda? Cadastra-se!';
 }

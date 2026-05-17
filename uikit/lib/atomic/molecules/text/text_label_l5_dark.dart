@@ -7,12 +7,15 @@ class TextLabelL5Dark  extends StatelessWidget {
   final String text;
   final bool overflow;
   final Color? color;
+    final bool dropShadow;
+
   const TextLabelL5Dark({
     super.key,
     this.maxLines,
     required this.text,
     this.overflow = false,
     this.color,
+    this.dropShadow = false,
   });
 
   @override
@@ -22,6 +25,7 @@ class TextLabelL5Dark  extends StatelessWidget {
       textStyle: Style.l5(color: ColorToken.dark),
       overflow: overflow,
       maxLines: maxLines,
+      dropShadow: dropShadow,
     );
   }
 }

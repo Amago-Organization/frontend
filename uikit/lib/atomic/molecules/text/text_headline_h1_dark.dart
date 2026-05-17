@@ -2,17 +2,19 @@
 import 'package:flutter/material.dart';
 import 'package:uikit/uikit.dart';
 
-class TextHeadlineH1 extends StatelessWidget {
+class TextHeadlineH1Dark extends StatelessWidget {
   final int? maxLines;
   final String text;
   final bool overflow;
   final Color? color;
-  const TextHeadlineH1({
+  final bool dropShadow;
+  const TextHeadlineH1Dark({
     super.key,
     this.maxLines,
     required this.text,
     this.overflow = false,
     this.color,
+    this.dropShadow = false,
   });
 
   @override
@@ -22,6 +24,7 @@ class TextHeadlineH1 extends StatelessWidget {
       textStyle: Style.h1(color: ColorToken.dark),
       overflow: overflow,
       maxLines: maxLines,
+      dropShadow: dropShadow,
     );
   }
 }

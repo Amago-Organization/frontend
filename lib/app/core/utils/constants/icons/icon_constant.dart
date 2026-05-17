@@ -36,5 +36,7 @@ final class IconConstant {
   static const String upload = 'assets/icons/upload.svg';
   static const String user = 'assets/icons/user.svg';
   static const String timer = 'assets/icons/timer.svg';
+  static const String visibility = 'assets/icons/visibility_on.svg';
+  static const String visibilityOff = 'assets/icons/visibility_off.svg';
   static const String whatsapp = 'assets/icons/whatsapp.svg';
 }
