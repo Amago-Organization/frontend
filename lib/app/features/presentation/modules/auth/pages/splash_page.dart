@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_getit/flutter_getit.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:amago/app/core/services/local/local_storage_service.dart';
 import 'package:amago/app/features/presentation/controllers/user/user_controller.dart';
@@ -55,7 +56,15 @@ class _SplashPageState extends State<SplashPage> {
                         text: TextConstant.serverError,
                       );
                     }
-                    return Center(child: CircularProgressIndicator());
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      spacing: SizeToken.xl,
+                      children: [
+                        SvgPicture.asset(ImageConstant.logoSplash, width: 200,),
+                        CircularProgressIndicator(),
+                      ],
+                    );
                   },
                 ),
               ),

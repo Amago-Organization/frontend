@@ -1,6 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:amago/app/features/domain/entities/user_entity.dart';
 import 'package:amago/app/features/domain/params/users/user_register_param.dart';
+import 'package:amago/app/features/domain/value_objects/email_value_object.dart';
+import 'package:amago/app/features/domain/value_objects/password_value_object.dart';
 import 'package:result_dart/result_dart.dart';
 
 import 'package:amago/app/core/usecase/usecase.dart';
@@ -12,6 +14,12 @@ class UserUsecaseRegister implements UseCase<UserEntity, UserRegisterParam> {
 
   @override
   AsyncResult<UserEntity> call(UserRegisterParam params) async {
-    return await userRepository.register(params);
+    return await userRepository.register(
+      UserRegisterParam(
+        name: params.name,
+        email: EmailValueObject(params.email).value,
+        password: PasswordValueObject(params.password).value,
+      ),
+    );
   }
 }

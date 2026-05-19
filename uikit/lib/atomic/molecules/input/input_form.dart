@@ -18,6 +18,9 @@ class InputForm extends StatelessWidget {
   final void Function()? sufixOnTap;
   final bool errorShadow;
   final bool obscureText;
+  final bool inWallpaper;
+  final bool hasShadowInput;
+  final void Function(String)? onChanged;
 
   const InputForm({
     super.key,
@@ -34,7 +37,10 @@ class InputForm extends StatelessWidget {
     this.sufixIcon,
     this.sufixOnTap,
     this.errorShadow = false,
-    this.obscureText = false,
+    this.obscureText = false, 
+    this.inWallpaper = false,
+    this.hasShadowInput = false,
+    this.onChanged,
   });
 
   @override
@@ -58,6 +64,9 @@ class InputForm extends StatelessWidget {
           sufixOnTap: sufixOnTap,
           errorShadow: errorShadow,
           obscureText: obscureText,
+          onChanged: onChanged,
+          inWallpaper: inWallpaper,
+          hasShadowInput: hasShadowInput,
         ),
       ],
     );

@@ -2,8 +2,8 @@ part of '../themes/themes.dart';
 
 const colorScheme = ColorScheme(
   brightness: Brightness.light,
-  primary: ColorToken.danger,
-  onPrimary: ColorToken.danger,
+  primary: ColorToken.dark,
+  onPrimary: ColorToken.dark,
   secondary: ColorToken.light,
   onSecondary: ColorToken.light,
   tertiary: ColorToken.neutral,

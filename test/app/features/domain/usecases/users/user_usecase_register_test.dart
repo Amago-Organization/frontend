@@ -24,7 +24,7 @@ void main() {
       input = UserRegisterParam(
         name: "Lázaro",
         email: "lazaro@gmail.com",
-        password: "1234",
+        password: "@Senha123",
       );
 
       output = UserEntity(
@@ -50,7 +50,7 @@ void main() {
       input = UserRegisterParam(
         name: "Lázaro",
         email: "lazaro@gmail.com",
-        password: "1234",
+        password: "@Senha123",
       );
 
       when(
@@ -63,6 +63,16 @@ void main() {
       expect(result.exceptionOrNull(), isA<Exception>());
 
       verify(() => repositoryMock.register(input)).called(1);
+    });
+
+    test("Deve lançar exceção para senha inválida", () async {
+      final input = UserRegisterParam(
+        name: "Lázaro",
+        email: "lazaro@gmail.com",
+        password: "1234",
+      );
+
+      expect(() => usecase(input), throwsA(isA<Exception>()));
     });
   });
 }

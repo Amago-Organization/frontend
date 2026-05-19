@@ -12,7 +12,6 @@ import 'package:amago/app/core/utils/constants/images/image_constant.dart';
 import 'package:amago/app/core/utils/constants/texts/text_constant.dart';
 import 'package:uikit/uikit.dart';
 
-
 class FeedPage extends StatefulWidget {
   const FeedPage({super.key});
 
@@ -42,20 +41,23 @@ class _FeedPageState extends State<FeedPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      backgroundColor: ColorToken.light,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(80),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(
-            SizeToken.md - 3.5,
+            SizeToken.xxl - 3.5,
             SizeToken.sm,
-            SizeToken.md,
+            SizeToken.xxl,
             0,
           ),
           child: AppBar(
             title: Image.asset(
               ImageConstant.logoHorizontal,
-              height: SizeToken.xl3,
+              height: SizeToken.xxl,
             ),
+
             actions: [
               IconButtonLargeDark(
                 onTap: () => context.push('/post/register'),
@@ -88,14 +90,45 @@ class _FeedPageState extends State<FeedPage> {
           ),
         ),
       ),
-      body: RefreshIndicator(
-        onRefresh: () async => init(),
-        child: LayoutBuilder(
-          builder: (context, constraints) => Padding(
-            padding: const EdgeInsets.only(bottom: SizeToken.lg),
-            child: ListAllPostsWidget(),
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: Opacity(
+              opacity: 0.25,
+              child: Image.asset(ImageConstant.wallpaperApp, fit: BoxFit.cover),
+            ),
           ),
-        ),
+          RefreshIndicator(
+            onRefresh: () async => init(),
+            child: LayoutBuilder(
+              builder: (context, constraints) => Padding(
+                padding: EdgeInsets.only(
+                  top: kToolbarHeight  + SizeToken.xxl,
+                ),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: SizeToken.xxl, bottom: SizeToken.lg, left: SizeToken.xxl, right: SizeToken.xxl),
+                      child: InputSearch(
+                        hintText: TextConstant.search,
+                        prefixIcon: IconConstant.search,
+                        hasShadowInput: true,
+                      ),
+                    ),
+                    DividerDefault(),
+                    Padding(
+                      padding: EdgeInsetsGeometry.symmetric(
+                        horizontal: SizeToken.sm1,
+                        vertical: SizeToken.lg
+                      ),
+                      child: ListAllPostsWidget(),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

@@ -7,6 +7,7 @@ class InputDefault extends StatelessWidget {
   final String? prefixIcon;
   final String? prefix;
   final String? sufixIcon;
+  final bool inWallpaper;
   final void Function()? onTap;
   final TextInputType? keyBoardType;
   final String hintText;
@@ -24,6 +25,7 @@ class InputDefault extends StatelessWidget {
   final bool isTextActive;
   final bool enable;
   final bool errorShadow;
+  final bool hasShadowInput;
   const InputDefault({
     super.key,
     this.prefixIcon,
@@ -44,117 +46,141 @@ class InputDefault extends StatelessWidget {
     this.paddingLeftSufix,
     this.isTextActive = false,
     this.enable = true,
-    this.errorShadow = false, this.obscureText = false,
+    this.errorShadow = false,
+    this.obscureText = false,
+    this.inWallpaper = false,
+    this.hasShadowInput = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      enabled: enable,
-      focusNode: focusNode,
-      onTap: onTap,
-      obscureText: obscureText,
-      readOnly: onTap != null ? true : false,
-      keyboardType: keyBoardType,
-      maxLines: maxLines,
-      style: Style.b1(color: ColorToken.dark),
-      textInputAction: textInputAction,
-      controller: controller ?? controller,
-      validator: validator ?? validator,
-      inputFormatters: inputFormatters,
-      decoration: InputDecoration(
-        filled: true,
-        fillColor: ColorToken.neutral,
-        contentPadding: const EdgeInsets.all(SizeToken.sm),
-        isDense: true,
-        prefixText: prefix,
-        prefixStyle: Style.b1(color: ColorToken.dark),
-        prefixIconConstraints: const BoxConstraints(minWidth: 0, minHeight: 0),
-        suffixIconConstraints: const BoxConstraints(minWidth: 0, minHeight: 0),
-        suffixIcon: Padding(
-          padding: EdgeInsets.only(
-              right: sufixIcon != null ? SizeToken.xs : SizeToken.sm,
-              left: sufixIcon != null ? 0 : SizeToken.xxs),
-          child: sufixIcon != null
-              ? isTextActive
-                  ? IconLargeDark(
-                      onTap: sufixOnTap,
-                      icon: sufixIcon!,
-                      isNarrow: true,
-                    )
-                  : IconLargeSemiDark(
-                      onTap: sufixOnTap,
-                      icon: sufixIcon!,
-                      padding: SizeToken.xs,
-                    )
-              : const SizedBox.shrink(),
-        ),
-        prefixIcon: isTextActive
-            ? const Padding(
-                padding: EdgeInsetsGeometry.only(right: SizeToken.sm))
-            : Padding(
-                padding: EdgeInsets.only(
-                    right: paddingLeftPrefix != null ? paddingLeftPrefix! : 0,
-                    left: SizeToken.xs),
-                child: prefixIcon != null
-                    ? IconLargeSemiDark(
-                        icon: prefixIcon!,
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(SizeToken.md),
+          boxShadow: hasShadowInput
+              ? [
+                  BoxShadow(
+                    color: ColorToken.dark.withValues(alpha: 0.25),
+                    offset: const Offset(0, 0),
+                    blurRadius: 0.1,
+                    spreadRadius: 0,
+                  ),
+                ]
+              : []),
+      child: TextFormField(
+        enabled: enable,
+        focusNode: focusNode,
+        onTap: onTap,
+        obscureText: obscureText,
+        readOnly: onTap != null ? true : false,
+        keyboardType: keyBoardType,
+        maxLines: maxLines,
+        style: Style.b1(color: ColorToken.dark),
+        textInputAction: textInputAction,
+        controller: controller ?? controller,
+        validator: validator ?? validator,
+        cursorErrorColor: ColorToken.dark,
+        cursorColor: ColorToken.dark,
+        inputFormatters: inputFormatters,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: ColorToken.neutral,
+          contentPadding: const EdgeInsets.all(SizeToken.sm),
+          isDense: true,
+          prefixText: prefix,
+          prefixStyle: Style.b1(color: ColorToken.dark),
+          prefixIconConstraints:
+              const BoxConstraints(minWidth: 0, minHeight: 0),
+          suffixIconConstraints:
+              const BoxConstraints(minWidth: 0, minHeight: 0),
+          suffixIcon: Padding(
+            padding: EdgeInsets.only(
+                right: sufixIcon != null ? SizeToken.xs : SizeToken.sm,
+                left: sufixIcon != null ? 0 : SizeToken.xxs),
+            child: sufixIcon != null
+                ? isTextActive
+                    ? IconLargeDark(
+                        onTap: sufixOnTap,
+                        icon: sufixIcon!,
+                        isNarrow: true,
+                      )
+                    : IconLargeSemiDark(
+                        onTap: sufixOnTap,
+                        icon: sufixIcon!,
                         padding: SizeToken.xs,
                       )
-                    : const SizedBox.shrink(),
-              ),
-        focusedBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(SizeToken.md),
+                : const SizedBox.shrink(),
           ),
-          borderSide: BorderSide.none,
-        ),
-        errorBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(SizeToken.md),
+          
+          prefixIcon: isTextActive
+              ? const Padding(
+                  padding: EdgeInsetsGeometry.only(right: SizeToken.sm))
+              : Padding(
+                  padding: EdgeInsets.only(
+                      right: paddingLeftPrefix != null ? paddingLeftPrefix! : 0,
+                      left: SizeToken.lg, bottom: 3),
+                  child: prefixIcon != null
+                      ? IconLargeSemiDark(
+                          icon: prefixIcon!,
+                          padding: 3,
+                        )
+                      : const SizedBox.shrink(),
+                ),
+          focusedBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(SizeToken.md),
+            ),
+            borderSide: BorderSide.none,
           ),
-          borderSide: BorderSide.none,
-        ),
-        enabledBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(SizeToken.md),
+          errorBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(SizeToken.md),
+            ),
+            borderSide: BorderSide.none,
           ),
-          borderSide: BorderSide.none,
-        ),
-        disabledBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(SizeToken.md),
+          enabledBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(SizeToken.md),
+            ),
+            borderSide: BorderSide.none,
           ),
-          borderSide: BorderSide.none,
-        ),
-        focusedErrorBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(SizeToken.md),
+          disabledBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(SizeToken.md),
+            ),
+            borderSide: BorderSide.none,
           ),
-          borderSide: BorderSide(color: ColorToken.danger, width: 1),
-        ),
-        errorStyle: errorShadow
-            ? Style.b2(color: ColorToken.danger).copyWith(
-                shadows: const [
-                  Shadow(
-                    offset: Offset(0, 0),
-                    blurRadius: 12,
-                    color: ColorToken.dark,
-                  ),
-                ],
-              )
-            : Style.b2(color: ColorToken.danger),
-        border: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(SizeToken.md),
+          focusedErrorBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(SizeToken.md),
+            ),
+            borderSide: BorderSide(color: ColorToken.danger, width: 1),
           ),
-          borderSide: BorderSide.none,
+          errorStyle: errorShadow
+              ? Style.b2(
+                      color: inWallpaper ? ColorToken.light : ColorToken.danger)
+                  .copyWith(
+                  shadows: const [
+                    Shadow(
+                      offset: Offset(0, 0),
+                      blurRadius: 12,
+                      color: ColorToken.dark,
+                    ),
+                  ],
+                )
+              : Style.b2(color: ColorToken.danger),
+          border: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(SizeToken.md),
+            ),
+            borderSide: BorderSide.none,
+          ),
+          hintText: hintText,
+          hintStyle: Style.b1(
+              color: isTextActive ? ColorToken.dark : ColorToken.semiDark),
         ),
-        hintText: hintText,
-        hintStyle: Style.b1(
-            color: isTextActive ? ColorToken.dark : ColorToken.semiDark),
+        onChanged: onChanged,
       ),
-      onChanged: onChanged,
     );
   }
 }

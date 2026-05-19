@@ -14,8 +14,8 @@ class DividerDefault extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Divider(
-      color: color ?? ColorToken.semiDark,
-      thickness: thickness ?? 0.2,
+      color: color ?? ColorToken.dark.withValues(alpha: 0.25),
+      thickness: thickness ?? 0.1,
     );
   }
 }
