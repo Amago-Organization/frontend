@@ -2,10 +2,13 @@ final class TextConstant {
   static String myProfile = 'Meu Perfil';
   static String myPosts = 'Minhas Publicações';
 
-  static String descriptionAmago = 'Porque cada memória guarda uma parte da sua história.';
-
+  static String descriptionAmago =
+      'Porque cada memória guarda uma parte da sua história.';
 
   static String logout = 'Sair';
+
+    static String search = 'Pesquisar...';
+
   static String sucessLoggingAccountTitle = 'Bem-vindo ao Âmago!';
 
   static String sucessRegisterAccountTitle = 'Conta Criada com Sucesso!';
@@ -83,6 +86,8 @@ final class TextConstant {
   static String bio = 'Bio';
   static String email = 'E-mail';
   static String password = 'Senha';
+  static String confirmPassword = 'Confirmar Senha';
+  static String confirmYourPassword = 'Confirme sua senha';
 
   static String maxSizeFile = 'O arquivo deve ter no máximo 10MB';
 
@@ -92,4 +97,5 @@ final class TextConstant {
   static String loggin = 'Fazer Login';
   static String register = 'Registrar-se';
   static String dontAccount = 'Não tem conta ainda? Cadastra-se!';
+  static String hasAccount = 'Já tem conta? Faça login!';
 }

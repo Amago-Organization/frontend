@@ -9,8 +9,8 @@ ThemeData get theme => ThemeData(
       appBarTheme: const AppBarTheme(
           titleSpacing: 0,
           toolbarHeight: kToolbarHeight,
-          backgroundColor: ColorToken.light,
-          surfaceTintColor: ColorToken.light),
+          backgroundColor: Colors.transparent,
+          surfaceTintColor: Colors.transparent),
     );
 
 void showCustomModalBottomSheet({

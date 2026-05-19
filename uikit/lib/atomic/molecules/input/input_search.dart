@@ -8,6 +8,7 @@ class InputSearch extends StatelessWidget {
   final String hintText;
   final String prefixIcon;
   final String? sufixIcon;
+  final bool hasShadowInput;
   const InputSearch({
     super.key,
     this.onChanged,
@@ -15,16 +16,19 @@ class InputSearch extends StatelessWidget {
     required this.prefixIcon,
     this.sufixIcon,
     this.sufixOnTap,
+    this.hasShadowInput = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return InputDefault(
+      
       hintText: hintText,
       prefixIcon: prefixIcon,
       sufixIcon: sufixIcon,
       onChanged: onChanged,
       sufixOnTap: sufixOnTap,
+      hasShadowInput: hasShadowInput,
     );
   }
 }

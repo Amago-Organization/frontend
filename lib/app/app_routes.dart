@@ -19,6 +19,8 @@ sealed class AppRoutes {
       GoRoute(path: '/login', builder: (context, state) => const LoginPage()),
       GoRoute(path: '/register', builder: (context, state) => RegisterPage()),
       GoRoute(path: '/feed', builder: (context, state) => FeedPage()),
+
+      
       GoRoute(
         path: '/my-profile',
         builder: (context, state) => MyProfilePage(),

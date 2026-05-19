@@ -34,6 +34,7 @@ class UserLoginFormWidget extends StatelessWidget {
             textInputAction: TextInputAction.next,
             labelText: TextConstant.email,
             errorShadow: true,
+            inWallpaper: true,
             validator: Validatorless.multiple([
               Validatorless.email(TextConstant.emailFieldError),
               Validatorless.required(TextConstant.fieldError),
@@ -47,6 +48,7 @@ class UserLoginFormWidget extends StatelessWidget {
                 textInputAction: TextInputAction.done,
                 labelText: TextConstant.password,
                 errorShadow: true,
+                inWallpaper: true,
                 obscureText: visiblityController.isVisible,
                 sufixOnTap: visiblityController.toggleVisibility,
                 sufixIcon: visiblityController.isVisible

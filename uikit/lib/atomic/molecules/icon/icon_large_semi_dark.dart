@@ -21,7 +21,7 @@ class IconLargeSemiDark extends StatelessWidget {
       padding: padding ?? SizeToken.sm,
       onTap: onTap,
       icon: icon,
-      height: 20,
+      height: 15,
       isBackgroundColor: isBackgroundColor,
       colorIcon: ColorToken.semiDark,
     );
